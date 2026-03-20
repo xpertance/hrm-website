@@ -1,0 +1,71 @@
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import Section from "../../layout/Section";
+import Container from "../../layout/Container";
+import Button from "../../components/Button";
+import { Colors } from "../../theme/colors";
+import { Typography } from "../../theme/typography";
+
+const CTASection: React.FC = () => {
+    return (
+        <Section background={Colors.section} paddingVertical={80}>
+            <Container>
+                <View style={styles.banner}>
+                    <Text style={styles.heading}>Ready to transform your HR?</Text>
+                    <Text style={styles.subtext}>
+                        Join 500+ companies that have automated their payroll and empowered their{"\n"}workforce with HRPayroll.
+                    </Text>
+                    <View style={styles.btns}>
+                        <Button label="Start Your Free Trial" variant="outline" size="lg" style={styles.outlineBtn} textStyle={styles.outlineBtnText} />
+                        <Button label="Contact Sales" variant="secondary" size="lg" />
+                    </View>
+                    <Text style={styles.disclaimer}>
+                        No credit card required • 14-day free trial • Cancel anytime
+                    </Text>
+                </View>
+            </Container>
+        </Section>
+    );
+};
+
+const styles = StyleSheet.create({
+    banner: {
+        backgroundColor: Colors.primary,
+        borderRadius: 20,
+        paddingVertical: 60,
+        paddingHorizontal: 40,
+        alignItems: "center",
+    },
+    heading: {
+        ...Typography.h2,
+        color: Colors.white,
+        textAlign: "center",
+        marginBottom: 12,
+    },
+    subtext: {
+        ...Typography.body,
+        color: "rgba(255,255,255,0.85)",
+        textAlign: "center",
+        marginBottom: 32,
+        lineHeight: 26,
+    },
+    btns: {
+        flexDirection: "row",
+        gap: 16,
+        marginBottom: 20,
+    },
+    outlineBtn: {
+        backgroundColor: Colors.white,
+        borderColor: Colors.white,
+    },
+    outlineBtnText: {
+        color: Colors.primaryDark,
+    },
+    disclaimer: {
+        ...Typography.bodySm,
+        color: "rgba(255,255,255,0.6)",
+        fontSize: 13,
+    },
+});
+
+export default CTASection;
