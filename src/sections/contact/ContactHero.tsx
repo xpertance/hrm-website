@@ -28,10 +28,10 @@ const ContactHero: React.FC = () => {
                 <View style={styles.row}>
                     {/* Left side */}
                     <View style={styles.left}>
-                        <Text style={styles.badge}>CONTACT US</Text>
+                        <Text style={styles.badge}>Contact Us</Text>
 
                         <Text style={styles.heading}>
-                            Expert Support{"\n"}for Your{"\n"}Growing Team
+                            Expert support{"\n"}for your{"\n"}growing team
                         </Text>
 
                         <Text style={styles.subtitle}>
@@ -42,17 +42,15 @@ const ContactHero: React.FC = () => {
                         {/* Contact cards */}
                         <View style={styles.contactCards}>
                             <View style={styles.contactCard}>
-                                <Text style={styles.contactIcon}>✉</Text>
                                 <View>
-                                    <Text style={styles.contactLabel}>Email Us</Text>
-                                    <Text style={styles.contactValue}>sales@hrpayroll.com</Text>
+                                    <Text style={styles.contactLabel}>Email us</Text>
+                                    <Text style={styles.contactValue}>xpertance932389@gmail.com</Text>
                                 </View>
                             </View>
                             <View style={styles.contactCard}>
-                                <Text style={styles.contactIcon}>📞</Text>
                                 <View>
-                                    <Text style={styles.contactLabel}>Call Us</Text>
-                                    <Text style={styles.contactValue}>+1 (555) 000-HR24</Text>
+                                    <Text style={styles.contactLabel}>Call us</Text>
+                                    <Text style={styles.contactValue}>7620301874</Text>
                                 </View>
                             </View>
                         </View>
@@ -60,17 +58,17 @@ const ContactHero: React.FC = () => {
                         {/* Trusted strip */}
                         <View style={styles.trustedStrip}>
                             <Text style={styles.trustedLabel}>
-                                TRUSTED BY 5,000+ HR PROFESSIONALS
+                                Trusted by 5,000+ HR professionals
                             </Text>
                             <View style={styles.logoPlaceholders}>
                                 <View style={styles.lgPlaceholder}>
-                                    <Text style={styles.lgText}>LOGOTYPE</Text>
+                                    <Text style={styles.lgText}>Logo type</Text>
                                 </View>
                                 <View style={styles.lgPlaceholder}>
-                                    <Text style={styles.lgText}>ENTERPRISE</Text>
+                                    <Text style={styles.lgText}>Enterprise</Text>
                                 </View>
                                 <View style={styles.lgPlaceholder}>
-                                    <Text style={styles.lgText}>GLOBAL CO</Text>
+                                    <Text style={styles.lgText}>Global co</Text>
                                 </View>
                             </View>
                         </View>
@@ -92,7 +90,7 @@ const ContactHero: React.FC = () => {
                                 />
                             </View>
                             <View style={styles.fieldHalf}>
-                                <Text style={styles.fieldLabel}>Email Address</Text>
+                                <Text style={styles.fieldLabel}>Email address</Text>
                                 <TextInput
                                     style={styles.input}
                                     placeholder="jane@company.com"
@@ -115,7 +113,7 @@ const ContactHero: React.FC = () => {
                                 />
                             </View>
                             <View style={styles.fieldHalf}>
-                                <Text style={styles.fieldLabel}>Employee Count</Text>
+                                <Text style={styles.fieldLabel}>Employee count</Text>
                                 <Pressable
                                     style={styles.selectWrap}
                                     onPress={() => setShowDropdown(!showDropdown)}
@@ -168,7 +166,7 @@ const ContactHero: React.FC = () => {
                                 hovered && styles.submitBtnHover,
                             ]}
                         >
-                            <Text style={styles.submitText}>Send Message ▸</Text>
+                            <Text style={styles.submitText}>Send message</Text>
                         </Pressable>
 
                         <Text style={styles.disclaimer}>

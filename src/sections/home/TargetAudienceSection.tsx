@@ -7,28 +7,23 @@ import { Typography } from "../../theme/typography";
 
 const AUDIENCE = [
     {
-        icon: "👥",
-        title: "HR Teams",
+        title: "HR teams",
         desc: "Simplify day-to-day HR administrative tasks and focus on core initiatives.",
     },
     {
-        icon: "🚀",
-        title: "Growing Startups",
+        title: "Growing startups",
         desc: "Set up professional HR and payroll workflows from day one.",
     },
     {
-        icon: "🏢",
-        title: "Mid-Sized Companies",
+        title: "Mid-sized companies",
         desc: "Scale your workforce without adding unnecessary overhead costs.",
     },
     {
-        icon: "🏢",
-        title: "Enterprise HR Departments",
+        title: "Enterprise HR departments",
         desc: "Manage complex organizational structures and compliance needs natively.",
     },
     {
-        icon: "🌍",
-        title: "Distributed Teams",
+        title: "Distributed teams",
         desc: "Support remote or multi-location workforces with a single platform.",
     },
 ];
@@ -37,7 +32,7 @@ const TargetAudienceSection: React.FC = () => {
     return (
         <Section background={Colors.section} paddingVertical={80}>
             <Container>
-                <Text style={styles.heading}>Who Is It For?</Text>
+                <Text style={styles.heading}>Who is it for?</Text>
                 <Text style={styles.subtext}>
                     Xpertance is the ideal solution for modern organizations striving for efficiency.
                 </Text>
@@ -52,8 +47,7 @@ const TargetAudienceSection: React.FC = () => {
     );
 };
 
-const AudienceCard: React.FC<{ icon: string; title: string; desc: string }> = ({
-    icon,
+const AudienceCard: React.FC<{ title: string; desc: string }> = ({
     title,
     desc,
 }) => {
@@ -65,9 +59,6 @@ const AudienceCard: React.FC<{ icon: string; title: string; desc: string }> = ({
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHovered]}
         >
-            <View style={styles.iconCircle}>
-                <Text style={styles.iconText}>{icon}</Text>
-            </View>
             <View style={styles.textContent}>
                 <Text style={styles.cardTitle}>{title}</Text>
                 <Text style={styles.cardDesc}>{desc}</Text>

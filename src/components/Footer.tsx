@@ -7,15 +7,15 @@ import { Spacing } from "../theme/spacing";
 
 const FOOTER_LINKS = {
     product: {
-        title: "PRODUCT",
+        title: "Product",
         links: ["Payroll Automation", "Attendance Management", "Employee Records", "ESS Portal", "Integrations"],
     },
     company: {
-        title: "COMPANY",
+        title: "Company",
         links: ["About Us", "Careers", "Partners", "Press Kit", "Contact"],
     },
     legal: {
-        title: "LEGAL",
+        title: "Legal",
         links: ["Privacy Policy", "Terms of Service", "Security", "Compliance"],
     },
 };
@@ -31,20 +31,13 @@ const Footer: React.FC = () => {
                     <View style={styles.brandCol}>
                         <Pressable onPress={() => navigate("/")} style={styles.logoContainer}>
                             <View style={styles.logoIcon}>
-                                <Text style={styles.logoIconText}>H</Text>
+                                <Text style={styles.logoIconText}>X</Text>
                             </View>
-                            <Text style={styles.logoText}>HRPayroll</Text>
+                            <Text style={styles.logoText}>Xpertance</Text>
                         </Pressable>
                         <Text style={styles.brandDesc}>
-                            The all-in-one HR and Payroll platform designed to help modern companies grow faster and manage better.
+                            The all-in-one HR and payroll platform designed to help modern companies grow faster and manage better.
                         </Text>
-                        <View style={styles.socialRow}>
-                            {["𝕏", "in", "▶"].map((icon, i) => (
-                                <View key={i} style={styles.socialIcon}>
-                                    <Text style={styles.socialIconText}>{icon}</Text>
-                                </View>
-                            ))}
-                        </View>
                     </View>
 
                     {/* Link columns */}
@@ -63,7 +56,7 @@ const Footer: React.FC = () => {
                 {/* Bottom bar */}
                 <View style={styles.bottomBar}>
                     <Text style={styles.copyright}>
-                        © 2024 HRPayroll SaaS. All rights reserved.
+                        © 2024 Xpertance SaaS. All rights reserved.
                     </Text>
                     <View style={styles.bottomLinks}>
                         {["Privacy", "Terms", "Cookies"].map((item) => (

@@ -14,32 +14,32 @@ interface FooterLink {
 
 const FOOTER_COLUMNS: { title: string; links: FooterLink[] }[] = [
     {
-        title: "PLATFORM",
+        title: "Platform",
         links: [
-            { label: "Employee Management", path: "/features" },
+            { label: "Employee management", path: "/features" },
             { label: "Payroll", path: "/features" },
-            { label: "Time & Attendance", path: "/features" },
-            { label: "ESS Portal", path: "/features" },
+            { label: "Time & attendance", path: "/features" },
+            { label: "ESS portal", path: "/features" },
         ],
     },
     {
-        title: "COMPANY",
+        title: "Company",
         links: [
-            { label: "About Us", path: "/about" },
+            { label: "About us", path: "/about" },
             { label: "Careers", path: "/" },
             { label: "Blog", path: "/" },
             { label: "Contact", path: "/contact" },
         ],
     },
     {
-        title: "SUPPORT",
+        title: "Support",
         links: [
-            { label: "Help Center", path: "/" },
+            { label: "Help center", path: "/" },
             { label: "Compliance", path: "/" },
         ],
     },
     {
-        title: "CONNECT",
+        title: "Connect",
         links: [
             { label: "Security", path: "/" },
             { label: "Login", path: "/" },
@@ -58,9 +58,9 @@ const FeaturesFooter: React.FC = () => {
                     <View style={styles.brand}>
                         <View style={styles.logoRow}>
                             <View style={styles.logoIcon}>
-                                <Text style={styles.logoIconText}>H</Text>
+                                <Text style={styles.logoIconText}>X</Text>
                             </View>
-                            <Text style={styles.logoText}>HRPayroll</Text>
+                            <Text style={styles.logoText}>Xpertance</Text>
                         </View>
                         <Text style={styles.brandDesc}>
                             The all-in-one platform for modern HR, Payroll, and Workforce
@@ -84,7 +84,7 @@ const FeaturesFooter: React.FC = () => {
                 {/* Bottom bar */}
                 <View style={styles.bottomBar}>
                     <Text style={styles.copyright}>
-                        © 2024 HRPayroll SaaS. All rights reserved.
+                        © 2024 Xpertance SaaS. All rights reserved.
                     </Text>
                     <View style={styles.legalLinks}>
                         <Pressable>

@@ -11,13 +11,13 @@ const AboutCTA: React.FC = () => {
         <Section background={Colors.section} paddingVertical={80}>
             <Container>
                 <View style={styles.banner}>
-                    <Text style={styles.heading}>Join the HCM Revolution</Text>
+                    <Text style={styles.heading}>Join the HCM revolution</Text>
                     <Text style={styles.subtext}>
                         Experience how a truly unified ecosystem can transform your{"\n"}workforce and your bottom line.
                     </Text>
                     <View style={styles.btns}>
-                        <Button label="Book a Strategy Demo" variant="outline" size="lg" style={styles.outlineBtn} textStyle={styles.outlineBtnText} />
-                        <Button label="View Case Studies" variant="secondary" size="lg" style={styles.secondaryBtn} />
+                        <Button label="Book a strategy demo" variant="outline" size="lg" style={styles.outlineBtn} textStyle={styles.outlineBtnText} />
+                        <Button label="View case studies" variant="secondary" size="lg" style={styles.secondaryBtn} />
                     </View>
                 </View>
             </Container>

@@ -1,7 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import HeroSection from "../sections/home/HeroSection";
-import TrustedStrip from "../sections/home/TrustedStrip";
 import ProductIntroSection from "../sections/home/ProductIntroSection";
 import TargetAudienceSection from "../sections/home/TargetAudienceSection";
 import WhyChooseSection from "../sections/home/WhyChooseSection";
@@ -16,7 +15,6 @@ const Home: React.FC = () => {
     return (
         <View style={styles.page}>
             <HeroSection />
-            <TrustedStrip />
             <ProductIntroSection />
             <TargetAudienceSection />
             <WhyChooseSection />

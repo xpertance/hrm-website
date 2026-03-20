@@ -15,31 +15,29 @@ const BenefitsHero: React.FC = () => {
                     {/* Left text */}
                     <View style={styles.left}>
                         <View style={styles.badge}>
-                            <Text style={styles.badgeIcon}>⚡</Text>
-                            <Text style={styles.badgeText}>EFFICIENCY REIMAGINED</Text>
+                            <Text style={styles.badgeText}>Efficiency reimagined</Text>
                         </View>
 
                         <Text style={styles.heading}>
-                            Transform Your{"\n"}Payroll into a{"\n"}
-                            <Text style={styles.headingHighlight}>Strategic{"\n"}Advantage</Text>
+                            Transform your{"\n"}payroll into a{"\n"}
+                            <Text style={styles.headingHighlight}>strategic{"\n"}advantage</Text>
                         </Text>
 
                         <Text style={styles.subtitle}>
-                            Stop losing hours to manual data entry. HRPayroll automates your
+                            Stop losing hours to manual data entry. Xpertance automates your
                             back-office ecosystem so you can focus on building
                             high-performance teams.
                         </Text>
 
                         <View style={styles.buttons}>
                             <Button
-                                label="Start Free Trial"
+                                label="Start free trial"
                                 onPress={() => { }}
                                 variant="primary"
                                 size="lg"
                             />
                             <Pressable style={styles.demoBtn}>
-                                <Text style={styles.demoBtnIcon}>▶</Text>
-                                <Text style={styles.demoBtnText}>Watch Product Demo</Text>
+                                <Text style={styles.demoBtnText}>Watch product demo</Text>
                             </Pressable>
                         </View>
                     </View>
@@ -69,10 +67,7 @@ const BenefitsHero: React.FC = () => {
                             </View>
 
                             <View style={styles.dashboardLabel}>
-                                <Text style={styles.labelText}>Live Dashboard Preview</Text>
-                                <View style={styles.playCircle}>
-                                    <Text style={styles.playIcon}>▶</Text>
-                                </View>
+                                <Text style={styles.labelText}>Live dashboard preview</Text>
                             </View>
                         </View>
                     </View>

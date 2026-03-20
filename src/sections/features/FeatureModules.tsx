@@ -55,8 +55,7 @@ export const EmployeeManagement: React.FC = () => (
                 {/* Left — text */}
                 <View style={styles.half}>
                     <View style={styles.moduleBadge}>
-                        <Text style={styles.moduleBadgeIcon}>🏢</Text>
-                        <Text style={styles.moduleBadgeText}>MODULE 01</Text>
+                        <Text style={styles.moduleBadgeText}>Module 01</Text>
                     </View>
                     <Text style={styles.moduleTitle}>
                         Employee Management & Digital Records
@@ -68,7 +67,6 @@ export const EmployeeManagement: React.FC = () => (
                     </Text>
                     {MODULE_01_BULLETS.map((b) => (
                         <View key={b.title} style={styles.bulletRow}>
-                            <Text style={styles.bulletIcon}>{b.icon}</Text>
                             <View style={styles.bulletText}>
                                 <Text style={styles.bulletTitle}>{b.title}</Text>
                                 <Text style={styles.bulletDesc}>{b.desc}</Text>
@@ -141,8 +139,7 @@ export const PayrollCompliance: React.FC = () => (
                 <View style={styles.half}>
                     <View style={styles.imagePlaceholder}>
                         <View style={styles.imgInner}>
-                            <Text style={styles.imgEmoji}>📊</Text>
-                            <Text style={styles.imgLabel}>Payroll Dashboard</Text>
+                            <Text style={styles.imgLabel}>Payroll dashboard</Text>
                         </View>
                     </View>
                 </View>
@@ -150,8 +147,7 @@ export const PayrollCompliance: React.FC = () => (
                 {/* Right — text */}
                 <View style={styles.half}>
                     <View style={styles.moduleBadge}>
-                        <Text style={styles.moduleBadgeIcon}>💰</Text>
-                        <Text style={styles.moduleBadgeText}>MODULE 02</Text>
+                        <Text style={styles.moduleBadgeText}>Module 02</Text>
                     </View>
                     <Text style={styles.moduleTitle}>
                         Automated Payroll &{"\n"}Compliance
@@ -164,7 +160,6 @@ export const PayrollCompliance: React.FC = () => (
                     <View style={styles.featurePairRow}>
                         {MODULE_02_FEATURES.map((f) => (
                             <View key={f.title} style={styles.featurePairCard}>
-                                <Text style={styles.featurePairIcon}>{f.icon}</Text>
                                 <Text style={styles.featurePairTitle}>{f.title}</Text>
                                 <Text style={styles.featurePairDesc}>{f.desc}</Text>
                             </View>
@@ -200,8 +195,7 @@ export const AttendanceLeave: React.FC = () => (
                 {/* Left — text */}
                 <View style={styles.half}>
                     <View style={styles.moduleBadge}>
-                        <Text style={styles.moduleBadgeIcon}>⏰</Text>
-                        <Text style={styles.moduleBadgeText}>MODULE 03</Text>
+                        <Text style={styles.moduleBadgeText}>Module 03</Text>
                     </View>
                     <Text style={styles.moduleTitle}>
                         Attendance & Smart Leave{"\n"}Workflows
@@ -260,8 +254,7 @@ export const ESSPortal: React.FC = () => (
                 <View style={styles.half}>
                     <View style={styles.imagePlaceholder}>
                         <View style={styles.imgInner}>
-                            <Text style={styles.imgEmoji}>📱</Text>
-                            <Text style={styles.imgLabel}>ESS Mobile App</Text>
+                            <Text style={styles.imgLabel}>ESS mobile app</Text>
                         </View>
                     </View>
                 </View>
@@ -269,8 +262,7 @@ export const ESSPortal: React.FC = () => (
                 {/* Right — text */}
                 <View style={styles.half}>
                     <View style={styles.moduleBadge}>
-                        <Text style={styles.moduleBadgeIcon}>📱</Text>
-                        <Text style={styles.moduleBadgeText}>MODULE 04</Text>
+                        <Text style={styles.moduleBadgeText}>Module 04</Text>
                     </View>
                     <Text style={styles.moduleTitle}>
                         Employee Self-Service (ESS){"\n"}Portal
@@ -321,8 +313,7 @@ export const FinanceLedgers: React.FC = () => (
                 {/* Left — text */}
                 <View style={styles.half}>
                     <View style={styles.moduleBadge}>
-                        <Text style={styles.moduleBadgeIcon}>💼</Text>
-                        <Text style={styles.moduleBadgeText}>MODULE 05</Text>
+                        <Text style={styles.moduleBadgeText}>Module 05</Text>
                     </View>
                     <Text style={styles.moduleTitle}>
                         Finance, Expenses & Ledgers
@@ -334,7 +325,6 @@ export const FinanceLedgers: React.FC = () => (
                     </Text>
                     {MODULE_05_BULLETS.map((b) => (
                         <View key={b.title} style={styles.bulletRowSimple}>
-                            <Text style={styles.bulletIcon}>{b.icon}</Text>
                             <Text style={styles.bulletSimpleText}>{b.title}</Text>
                         </View>
                     ))}
@@ -344,8 +334,7 @@ export const FinanceLedgers: React.FC = () => (
                 <View style={styles.half}>
                     <View style={styles.imagePlaceholder}>
                         <View style={styles.imgInner}>
-                            <Text style={styles.imgEmoji}>📈</Text>
-                            <Text style={styles.imgLabel}>Finance Dashboard</Text>
+                            <Text style={styles.imgLabel}>Finance dashboard</Text>
                         </View>
                     </View>
                 </View>
@@ -379,8 +368,7 @@ export const PerformanceReviews: React.FC = () => (
                 <View style={styles.half}>
                     <View style={styles.imagePlaceholder}>
                         <View style={styles.imgInner}>
-                            <Text style={styles.imgEmoji}>🤝</Text>
-                            <Text style={styles.imgLabel}>Team Reviews</Text>
+                            <Text style={styles.imgLabel}>Team reviews</Text>
                         </View>
                     </View>
                 </View>
@@ -388,8 +376,7 @@ export const PerformanceReviews: React.FC = () => (
                 {/* Right — text */}
                 <View style={styles.half}>
                     <View style={styles.moduleBadge}>
-                        <Text style={styles.moduleBadgeIcon}>⭐</Text>
-                        <Text style={styles.moduleBadgeText}>MODULE 06</Text>
+                        <Text style={styles.moduleBadgeText}>Module 06</Text>
                     </View>
                     <Text style={styles.moduleTitle}>
                         Performance & Talent Reviews
@@ -401,9 +388,6 @@ export const PerformanceReviews: React.FC = () => (
                     </Text>
                     {MODULE_06_FEATURES.map((f) => (
                         <View key={f.title} style={styles.detailFeature}>
-                            <View style={styles.detailIconWrap}>
-                                <Text style={styles.detailIcon}>{f.icon}</Text>
-                            </View>
                             <View style={styles.detailContent}>
                                 <Text style={styles.detailTitle}>{f.title}</Text>
                                 <Text style={styles.detailDesc}>{f.desc}</Text>

@@ -6,8 +6,8 @@ import { Colors } from "../../theme/colors";
 import { Typography } from "../../theme/typography";
 
 const STATS = [
-    { value: "ACCURATE", label: "TAX COMPLIANCE" },
-    { value: "FAST", label: "PAYROLL PROCESSING" },
+    { value: "Accurate", label: "Tax compliance" },
+    { value: "Fast", label: "Payroll processing" },
 ];
 
 const ErrorReductionSection: React.FC = () => {

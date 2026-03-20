@@ -8,13 +8,20 @@ import { Typography } from "../../theme/typography";
 import { Spacing } from "../../theme/spacing";
 
 const HeroSection: React.FC = () => {
+    const scrollToSection = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
+
     return (
         <Section background={Colors.background} paddingVertical={60}>
             <Container>
                 {/* Badge */}
                 <View style={styles.badgeRow}>
                     <View style={styles.badge}>
-                        <Text style={styles.badgeText}>⚡ NEW: AUTOMATED TAX FILING 2.0</Text>
+                        <Text style={styles.badgeText}>New: Automated tax filing 2.0</Text>
                     </View>
                 </View>
 
@@ -23,14 +30,14 @@ const HeroSection: React.FC = () => {
                     <View style={styles.heroLeft}>
                         <Text style={styles.heroHeadline}>
                             Xpertance{"\n"}
-                            <Text style={styles.heroHighlight}>Modern HR & Workforce{"\n"}Management Platform</Text>
+                            <Text style={styles.heroHighlight}>Modern HR & workforce{"\n"}management platform</Text>
                         </Text>
                         <Text style={styles.heroSubtext}>
                             Manage employees, payroll automation, attendance, and compliance in one centralized platform designed for modern teams. Eliminate errors and save hours of manual work every month.
                         </Text>
                         <View style={styles.heroBtns}>
-                            <Button label="Get Started" variant="primary" size="md" />
-                            <Button label="Book Demo" variant="outline" size="md" />
+                            <Button label="Get started" variant="primary" size="md" onPress={() => scrollToSection("features")} />
+                            <Button label="Book demo" variant="outline" size="md" onPress={() => scrollToSection("contact")} />
                         </View>
                     </View>
 

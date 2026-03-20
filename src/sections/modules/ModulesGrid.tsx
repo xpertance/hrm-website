@@ -15,84 +15,84 @@ interface ModuleItem {
 
 const MODULES: ModuleItem[] = [
     {
-        icon: "👥",
-        title: "Employee Directory",
+        icon: "",
+        title: "Employee directory",
         description:
             "Centralized database for employee records, contact information, organizational charts, and personal profiles.",
-        category: "CORE HR",
+        category: "Core HR",
     },
     {
-        icon: "💰",
-        title: "Payroll System",
+        icon: "",
+        title: "Payroll system",
         description:
             "Automated salary processing, tax compliance management, benefits distribution, and direct deposit handling.",
-        category: "FINANCE",
+        category: "Finance",
     },
     {
-        icon: "⏱",
-        title: "Attendance Monitoring",
+        icon: "",
+        title: "Attendance monitoring",
         description:
             "Real-time tracking of clock-ins, shift rotations, break times, and automated overtime calculations.",
-        category: "OPERATIONS",
+        category: "Operations",
     },
     {
-        icon: "👤+",
-        title: "Recruitment & Onboarding",
+        icon: "",
+        title: "Recruitment & onboarding",
         description:
             "Manage hiring pipelines, track applicants, and streamline the documentation process for new hires.",
-        category: "TALENT",
+        category: "Talent",
     },
     {
-        icon: "📅",
-        title: "Leave Management",
+        icon: "",
+        title: "Leave management",
         description:
             "Automated absence requests, balance tracking, and approval workflows integrated with the company calendar.",
-        category: "CORE HR",
+        category: "Core HR",
     },
     {
-        icon: "🏛",
-        title: "Finance & Accounting",
+        icon: "",
+        title: "Finance & accounting",
         description:
             "General ledger tracking, complex expense reporting, budgeting tools, and comprehensive financial audits.",
-        category: "FINANCE",
+        category: "Finance",
     },
     {
-        icon: "📈",
-        title: "Performance Management",
+        icon: "",
+        title: "Performance management",
         description:
             "Facilitate appraisals, set KPIs, manage continuous feedback loops, and track professional growth milestones.",
-        category: "TALENT",
+        category: "Talent",
     },
     {
-        icon: "📋",
-        title: "Billing System",
+        icon: "",
+        title: "Billing system",
         description:
             "Comprehensive client invoicing, management of accounts receivable, and automated billing cycle tracking.",
-        category: "FINANCE",
+        category: "Finance",
     },
     {
-        icon: "🔒",
-        title: "Security & Role Access",
+        icon: "",
+        title: "Security & role access",
         description:
             "Fine-grained user permissions, security audit logs, multi-factor authentication, and data encryption settings.",
-        category: "ADMIN",
+        category: "Admin",
     },
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
-    "CORE HR": "#E8F5F3",
-    FINANCE: "#E8F1FB",
-    OPERATIONS: "#F0F4F8",
-    TALENT: "#FAF0E6",
-    ADMIN: "#F3F0FA",
+    "Core HR": "#E8F5F3",
+    Finance: "#E8F1FB",
+    Operations: "#F0F4F8",
+    Talent: "#FAF0E6",
+    Admin: "#F3F0FA",
 };
 
 const CATEGORY_TEXT_COLORS: Record<string, string> = {
-    "CORE HR": Colors.primary,
-    FINANCE: "#2563EB",
-    OPERATIONS: Colors.accent,
-    TALENT: "#D97706",
-    ADMIN: "#7C3AED",
+    "Core HR": Colors.primary,
+    Finance: "#2563EB",
+    Operations: Colors.accent,
+    Talent: "#D97706",
+    Admin: "#7C3AED",
 };
 
 const ModuleCard: React.FC<{ item: ModuleItem }> = ({ item }) => {
@@ -103,16 +103,12 @@ const ModuleCard: React.FC<{ item: ModuleItem }> = ({ item }) => {
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHover]}
         >
-            <View style={styles.iconWrap}>
-                <Text style={styles.iconText}>{item.icon}</Text>
-            </View>
-
             <Text style={styles.cardTitle}>{item.title}</Text>
             <Text style={styles.cardDesc}>{item.description}</Text>
 
             <View style={styles.cardFooter}>
                 <Pressable style={styles.learnMore}>
-                    <Text style={styles.learnMoreText}>Learn More →</Text>
+                    <Text style={styles.learnMoreText}>Learn more</Text>
                 </Pressable>
                 <View
                     style={[

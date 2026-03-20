@@ -8,33 +8,27 @@ import { Spacing } from "../../theme/spacing";
 
 const FEATURES = [
     {
-        icon: "🗄️",
-        title: "Centralized Database",
+        title: "Centralized database",
         desc: "One source of truth for all employee records, contracts, and sensitive documents with bank-grade security.",
     },
     {
-        icon: "⚙️",
-        title: "Automated Payroll",
+        title: "Automated payroll",
         desc: "Run automated payroll in minutes with automatic tax calculations and direct bank disbursements.",
     },
     {
-        icon: "📍",
-        title: "Attendance Tracking",
+        title: "Attendance tracking",
         desc: "Real-time tracking with geo-fencing and biometric integration for remote and on-site teams.",
     },
     {
-        icon: "📊",
-        title: "Performance Monitoring",
+        title: "Performance monitoring",
         desc: "Set KPIs, track progress, and conduct seamless appraisals with integrated feedback loops.",
     },
     {
-        icon: "✅",
-        title: "Compliance Management",
+        title: "Compliance management",
         desc: "Stay compliant with local labor laws and statutory requirements automatically updated in-app.",
     },
     {
-        icon: "🏦",
-        title: "Loan Management",
+        title: "Loan management",
         desc: "Manage employee loans, salary advances, and repayments with automated payroll deductions.",
     },
 ];
@@ -43,7 +37,7 @@ const WhyChooseSection: React.FC = () => {
     return (
         <Section background={Colors.background} paddingVertical={80}>
             <Container>
-                <Text style={styles.heading}>Why Choose Xpertance?</Text>
+                <Text style={styles.heading}>Why choose Xpertance?</Text>
                 <Text style={styles.subtext}>
                     We built a platform that scales with your growth. Focus on workforce efficiency{"\n"}and eliminate manual overhead with our automated suite.
                 </Text>
@@ -58,8 +52,7 @@ const WhyChooseSection: React.FC = () => {
     );
 };
 
-const FeatureCard: React.FC<{ icon: string; title: string; desc: string }> = ({
-    icon,
+const FeatureCard: React.FC<{ title: string; desc: string }> = ({
     title,
     desc,
 }) => {
@@ -71,9 +64,6 @@ const FeatureCard: React.FC<{ icon: string; title: string; desc: string }> = ({
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHovered]}
         >
-            <View style={styles.iconCircle}>
-                <Text style={styles.iconText}>{icon}</Text>
-            </View>
             <Text style={styles.cardTitle}>{title}</Text>
             <Text style={styles.cardDesc}>{desc}</Text>
         </Pressable>

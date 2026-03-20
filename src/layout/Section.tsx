@@ -8,6 +8,7 @@ interface SectionProps {
     background?: string;
     paddingVertical?: number;
     style?: ViewStyle;
+    id?: string;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -15,9 +16,11 @@ const Section: React.FC<SectionProps> = ({
     background = Colors.background,
     paddingVertical = Spacing.section,
     style,
+    id,
 }) => {
     return (
         <View
+            nativeID={id}
             style={[
                 styles.section,
                 { backgroundColor: background, paddingTop: paddingVertical, paddingBottom: paddingVertical },

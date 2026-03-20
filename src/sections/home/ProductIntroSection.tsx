@@ -7,14 +7,14 @@ import { Typography } from "../../theme/typography";
 
 const HIGHLIGHTS = [
     "Simplify complex employee operations",
-    "Automate end-to-to payroll processing",
+    "Automate end-to-end payroll processing",
     "Enhance overall workforce visibility",
     "Streamline compliance and reporting",
 ];
 
 const ProductIntroSection: React.FC = () => {
     return (
-        <Section background={Colors.background} paddingVertical={80}>
+        <Section background={Colors.background} paddingVertical={80} id="features">
             <Container>
                 <View style={styles.centerCol}>
                     <Text style={styles.heading}>What is Xpertance?</Text>

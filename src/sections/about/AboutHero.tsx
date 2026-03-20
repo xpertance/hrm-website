@@ -11,7 +11,7 @@ const AboutHero: React.FC = () => {
             <Container>
                 <View style={styles.center}>
                     <View style={styles.badge}>
-                        <Text style={styles.badgeText}>OUR VISION</Text>
+                        <Text style={styles.badgeText}>Our vision</Text>
                     </View>
                     <Text style={styles.heading}>
                         Beyond Payroll: The Complete{"\n"}

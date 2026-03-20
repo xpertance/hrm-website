@@ -14,29 +14,29 @@ interface ComparisonRow {
 
 const COMPARISON_DATA: ComparisonRow[] = [
     {
-        feature: "Data Management",
-        manual: "Spreadsheets & Paper",
-        hrpayroll: "Unified Cloud Database",
+        feature: "Data management",
+        manual: "Spreadsheets & paper",
+        hrpayroll: "Unified cloud database",
     },
     {
-        feature: "Calculation Speed",
-        manual: "2-3 Business Days",
-        hrpayroll: "Instant (Seconds)",
+        feature: "Calculation speed",
+        manual: "2-3 business days",
+        hrpayroll: "Instant (seconds)",
     },
     {
-        feature: "Tax Compliance",
-        manual: "Manual Filing Risks",
-        hrpayroll: "Auto-calculated & Filed",
+        feature: "Tax compliance",
+        manual: "Manual filing risks",
+        hrpayroll: "Auto-calculated & filed",
     },
     {
-        feature: "Employee Access",
-        manual: "HR Request Required",
-        hrpayroll: "24/7 Mobile Self-Service",
+        feature: "Employee access",
+        manual: "HR request required",
+        hrpayroll: "24/7 mobile self-service",
     },
     {
         feature: "Reporting",
-        manual: "Delayed & Static",
-        hrpayroll: "Real-time Visual Analytics",
+        manual: "Delayed & static",
+        hrpayroll: "Real-time visual analytics",
     },
 ];
 
@@ -46,7 +46,7 @@ const ComparisonTable: React.FC = () => {
             <Container>
                 <View style={styles.header}>
                     <Text style={styles.heading}>
-                        Manual HR vs. <Text style={styles.highlight}>HRPayroll</Text>
+                        Manual HR vs. <Text style={styles.highlight}>Xpertance</Text>
                     </Text>
                     <Text style={styles.subtitle}>
                         See how the switch to automation transforms your daily operations.
@@ -57,14 +57,14 @@ const ComparisonTable: React.FC = () => {
                     {/* Table header */}
                     <View style={[styles.tableRow, styles.tableHeader]}>
                         <View style={styles.colFeature}>
-                            <Text style={styles.colHeaderText}>FEATURE COMPARISON</Text>
+                            <Text style={styles.colHeaderText}>Feature comparison</Text>
                         </View>
                         <View style={styles.colManual}>
-                            <Text style={styles.colHeaderText}>MANUAL PROCESS</Text>
+                            <Text style={styles.colHeaderText}>Manual process</Text>
                         </View>
                         <View style={styles.colHR}>
                             <Text style={[styles.colHeaderText, { color: Colors.primary }]}>
-                                HRPAYROLL AI
+                                Xpertance
                             </Text>
                         </View>
                     </View>

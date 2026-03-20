@@ -15,39 +15,39 @@ interface OutcomeItem {
 
 const OUTCOMES: OutcomeItem[] = [
     {
-        icon: "⏱",
-        title: "Reduce Time",
+        icon: "",
+        title: "Reduce time",
         description:
             "Process complex payroll runs 80% faster with automated engine logic.",
-        stat: "Avg. Saving: 12hrs/week",
+        stat: "Avg. saving: 12hrs/week",
     },
     {
-        icon: "✅",
-        title: "Eliminate Errors",
+        icon: "",
+        title: "Eliminate errors",
         description:
             "99.9% accuracy guaranteed with built-in federal and state compliance checks.",
-        stat: "0% Manual Correction",
+        stat: "0% manual correction",
     },
     {
-        icon: "🚀",
+        icon: "",
         title: "Productivity",
         description:
             "Empower teams with self-service portals, reducing HR inquiry tickets.",
-        stat: "+45% Team Capacity",
+        stat: "+45% team capacity",
     },
     {
-        icon: "👁",
+        icon: "",
         title: "Transparency",
         description:
             "Real-time audit trails for every payroll modification and tax filing.",
-        stat: "Full Traceability",
+        stat: "Full traceability",
     },
     {
-        icon: "📊",
-        title: "Better Visibility",
+        icon: "",
+        title: "Better visibility",
         description:
             "One-click executive reporting on labor costs, churn, and forecasting.",
-        stat: "CFO-Ready Data",
+        stat: "CFO-ready data",
     },
 ];
 
@@ -59,9 +59,6 @@ const OutcomeCard: React.FC<{ item: OutcomeItem }> = ({ item }) => {
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHover]}
         >
-            <View style={styles.iconWrap}>
-                <Text style={styles.iconText}>{item.icon}</Text>
-            </View>
             <Text style={styles.cardTitle}>{item.title}</Text>
             <Text style={styles.cardDesc}>{item.description}</Text>
             <Text style={styles.cardStat}>{item.stat}</Text>

@@ -7,28 +7,23 @@ import { Typography } from "../../theme/typography";
 
 const UVP_ITEMS = [
     {
-        icon: "🔗",
-        title: "Unified HR + Payroll",
+        title: "Unified HR + payroll",
         desc: "Seamlessly combine human resources, automated payroll, and workforce management.",
     },
     {
-        icon: "📂",
-        title: "Centralized Data Platform",
+        title: "Centralized data platform",
         desc: "Keep all employee data safely stored in a single platform, easily accessible but highly secure.",
     },
     {
-        icon: "📈",
-        title: "Smart Reporting & Insights",
+        title: "Smart reporting & insights",
         desc: "Make informed decisions with real-time workforce trends, cost analysis, and actionable metrics.",
     },
     {
-        icon: "🚀",
-        title: "Scalable Architecture",
+        title: "Scalable architecture",
         desc: "Our platform grows as your company does, providing speed and reliability at any team size.",
     },
     {
-        icon: "⚡",
-        title: "Simplified Workflows",
+        title: "Simplified workflows",
         desc: "Eliminate repetitive tasks and approve HR requests confidently with built-in automation.",
     },
 ];
@@ -37,7 +32,7 @@ const UniqueValueSection: React.FC = () => {
     return (
         <Section background={Colors.background} paddingVertical={80}>
             <Container>
-                <Text style={styles.heading}>What Makes Xpertance Different</Text>
+                <Text style={styles.heading}>What makes Xpertance different</Text>
                 <Text style={styles.subtext}>
                     Discover the unique value we bring to modern businesses compared to traditional solutions.
                 </Text>
@@ -52,8 +47,7 @@ const UniqueValueSection: React.FC = () => {
     );
 };
 
-const FeatureCard: React.FC<{ icon: string; title: string; desc: string }> = ({
-    icon,
+const FeatureCard: React.FC<{ title: string; desc: string }> = ({
     title,
     desc,
 }) => {
@@ -65,9 +59,6 @@ const FeatureCard: React.FC<{ icon: string; title: string; desc: string }> = ({
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHovered]}
         >
-            <View style={styles.iconCircle}>
-                <Text style={styles.iconText}>{icon}</Text>
-            </View>
             <Text style={styles.cardTitle}>{title}</Text>
             <Text style={styles.cardDesc}>{desc}</Text>
         </Pressable>

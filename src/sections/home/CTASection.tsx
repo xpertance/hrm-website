@@ -7,8 +7,15 @@ import { Colors } from "../../theme/colors";
 import { Typography } from "../../theme/typography";
 
 const CTASection: React.FC = () => {
+    const scrollToSection = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
+
     return (
-        <Section background={Colors.section} paddingVertical={80}>
+        <Section background={Colors.section} paddingVertical={80} id="contact">
             <Container>
                 <View style={styles.banner}>
                     <Text style={styles.heading}>Ready to transform your HR?</Text>
@@ -16,8 +23,19 @@ const CTASection: React.FC = () => {
                         Join 500+ companies that have automated their payroll and empowered their{"\n"}workforce with HRPayroll.
                     </Text>
                     <View style={styles.btns}>
-                        <Button label="Start Your Free Trial" variant="outline" size="lg" style={styles.outlineBtn} textStyle={styles.outlineBtnText} />
-                        <Button label="Contact Sales" variant="secondary" size="lg" />
+                        <Button
+                            label="Start your free trial"
+                            variant="outline"
+                            size="lg"
+                            style={styles.outlineBtn}
+                            textStyle={styles.outlineBtnText}
+                        />
+                        <Button
+                            label="Contact sales"
+                            variant="secondary"
+                            size="lg"
+                            onPress={() => scrollToSection("contact")}
+                        />
                     </View>
                     <Text style={styles.disclaimer}>
                         No credit card required • 14-day free trial • Cancel anytime

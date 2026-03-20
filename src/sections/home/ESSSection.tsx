@@ -38,7 +38,7 @@ const ESSSection: React.FC = () => {
                     <View style={styles.imageCol}>
                         <View style={styles.imagePlaceholder}>
                             <View style={styles.imageOverlay}>
-                                <Text style={styles.overlayLabel}>SALARY SUMMARY</Text>
+                                <Text style={styles.overlayLabel}>Salary summary</Text>
                                 <View style={styles.overlayStat}>
                                     <View style={[styles.overlayBar, { width: "80%" }]} />
                                     <View style={[styles.overlayBar, { width: "60%" }]} />

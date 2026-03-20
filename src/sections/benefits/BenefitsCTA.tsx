@@ -15,11 +15,11 @@ const BenefitsCTA: React.FC = () => {
                     <Text style={styles.heading}>Ready to reclaim your time?</Text>
                     <Text style={styles.subtitle}>
                         Join over 2,500+ companies that have automated their HR operations
-                        with{"\n"}HRPayroll.
+                        with{"\n"}Xpertance.
                     </Text>
                     <View style={styles.buttons}>
                         <Button
-                            label="Start Your Free Trial"
+                            label="Start your free trial"
                             onPress={() => { }}
                             variant="outline"
                             size="lg"
@@ -30,7 +30,7 @@ const BenefitsCTA: React.FC = () => {
                             textStyle={{ color: Colors.white }}
                         />
                         <Button
-                            label="Talk to an Expert"
+                            label="Talk to an expert"
                             onPress={() => { }}
                             variant="primary"
                             size="lg"

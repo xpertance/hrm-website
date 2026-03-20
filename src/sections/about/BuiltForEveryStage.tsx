@@ -30,12 +30,9 @@ const BuiltForEveryStage: React.FC = () => {
                     {/* Startups Card */}
                     <View style={styles.card}>
                         <View style={styles.cardHeader}>
-                            <View style={[styles.iconWrap, { backgroundColor: Colors.softPrimary }]}>
-                                <Text style={styles.iconEmoji}>🚀</Text>
-                            </View>
                             <View>
-                                <Text style={styles.cardTitle}>For Startups</Text>
-                                <Text style={styles.cardSubtitle}>Speed & Agility</Text>
+                                <Text style={styles.cardTitle}>For startups</Text>
+                                <Text style={styles.cardSubtitle}>Speed & agility</Text>
                             </View>
                         </View>
                         <Text style={styles.cardDesc}>
@@ -54,12 +51,9 @@ const BuiltForEveryStage: React.FC = () => {
                     {/* Enterprise Card */}
                     <View style={styles.card}>
                         <View style={styles.cardHeader}>
-                            <View style={[styles.iconWrap, { backgroundColor: Colors.softAccent }]}>
-                                <Text style={styles.iconEmoji}>🏢</Text>
-                            </View>
                             <View>
-                                <Text style={styles.cardTitle}>For Enterprises</Text>
-                                <Text style={styles.cardSubtitle}>Compliance & Scale</Text>
+                                <Text style={styles.cardTitle}>For enterprises</Text>
+                                <Text style={styles.cardSubtitle}>Compliance & scale</Text>
                             </View>
                         </View>
                         <Text style={styles.cardDesc}>

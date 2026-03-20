@@ -13,12 +13,12 @@ const FeaturesHero: React.FC = () => {
             <Container>
                 <View style={styles.center}>
                     <View style={styles.badge}>
-                        <Text style={styles.badgeText}>PLATFORM OVERVIEW</Text>
+                        <Text style={styles.badgeText}>Platform overview</Text>
                     </View>
 
                     <Text style={styles.heading}>
-                        The Complete Suite for{"\n"}
-                        <Text style={styles.highlight}>Modern Workforce</Text> Management
+                        The complete suite for{"\n"}
+                        <Text style={styles.highlight}>modern workforce</Text> management
                     </Text>
 
                     <Text style={styles.subtitle}>
@@ -28,13 +28,13 @@ const FeaturesHero: React.FC = () => {
 
                     <View style={styles.buttons}>
                         <Button
-                            label="Start Free Trial"
+                            label="Start free trial"
                             onPress={() => { }}
                             variant="primary"
                             size="lg"
                         />
                         <Button
-                            label="View Product Tour"
+                            label="View product tour"
                             onPress={() => { }}
                             variant="outline"
                             size="lg"

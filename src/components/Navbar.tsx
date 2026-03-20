@@ -9,7 +9,7 @@ const NAV_LINKS = [
     { label: "Features", path: "/features" },
     { label: "Modules", path: "/modules" },
     { label: "Benefits", path: "/benefits" },
-    { label: "About Us", path: "/about" },
+    { label: "About us", path: "/about" },
     { label: "Contact", path: "/contact" },
 ];
 
@@ -50,22 +50,6 @@ const Navbar: React.FC = () => {
                             </Text>
                         </Pressable>
                     ))}
-                </View>
-
-                {/* Right actions */}
-                <View style={styles.rightActions}>
-                    <Pressable onPress={() => { }} style={styles.loginBtn}>
-                        <Text style={styles.loginText}>Login</Text>
-                    </Pressable>
-                    <Pressable
-                        onPress={() => { }}
-                        style={({ hovered }: any) => [
-                            styles.ctaBtn,
-                            hovered && styles.ctaBtnHover,
-                        ]}
-                    >
-                        <Text style={styles.ctaText}>Get Started</Text>
-                    </Pressable>
                 </View>
             </View>
         </View>
