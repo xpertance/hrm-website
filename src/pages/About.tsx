@@ -4,7 +4,6 @@ import AboutHero from "../sections/about/AboutHero";
 import UnifiedEcosystem from "../sections/about/UnifiedEcosystem";
 import EvolutionTimeline from "../sections/about/EvolutionTimeline";
 import BuiltForEveryStage from "../sections/about/BuiltForEveryStage";
-import AboutCTA from "../sections/about/AboutCTA";
 
 const About: React.FC = () => {
     return (
@@ -13,7 +12,6 @@ const About: React.FC = () => {
             <UnifiedEcosystem />
             <EvolutionTimeline />
             <BuiltForEveryStage />
-            <AboutCTA />
         </View>
     );
 };

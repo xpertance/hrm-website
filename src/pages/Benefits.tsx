@@ -3,7 +3,6 @@ import { View, StyleSheet } from "react-native";
 import BenefitsHero from "../sections/benefits/BenefitsHero";
 import OutcomesSection from "../sections/benefits/OutcomesSection";
 import ComparisonTable from "../sections/benefits/ComparisonTable";
-import BenefitsCTA from "../sections/benefits/BenefitsCTA";
 
 const Benefits: React.FC = () => {
     return (
@@ -11,7 +10,6 @@ const Benefits: React.FC = () => {
             <BenefitsHero />
             <OutcomesSection />
             <ComparisonTable />
-            <BenefitsCTA />
         </View>
     );
 };

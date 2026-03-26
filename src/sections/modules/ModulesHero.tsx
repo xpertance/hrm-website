@@ -18,20 +18,6 @@ const ModulesHero: React.FC = () => {
                             areas efficiently.
                         </Text>
                     </View>
-                    <View style={styles.right}>
-                        <Pressable
-                            style={({ hovered }: any) => [
-                                styles.addBtn,
-                                hovered && styles.addBtnHover,
-                            ]}
-                        >
-                            <Text style={styles.addBtnIcon}>+</Text>
-                            <Text style={styles.addBtnText}>Add Module</Text>
-                        </Pressable>
-                        <Pressable style={styles.filterBtn}>
-                            <Text style={styles.filterIcon}>☰</Text>
-                        </Pressable>
-                    </View>
                 </View>
             </Container>
         </Section>
@@ -57,47 +43,6 @@ const styles = StyleSheet.create({
         ...Typography.body,
         color: Colors.textSecondary,
         lineHeight: 26,
-    },
-    right: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 12,
-    },
-    addBtn: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 8,
-        backgroundColor: Colors.primaryDark,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 8,
-    },
-    addBtnHover: {
-        backgroundColor: "#1e293b",
-    },
-    addBtnIcon: {
-        color: Colors.white,
-        fontSize: 16,
-        fontWeight: "500",
-    },
-    addBtnText: {
-        ...Typography.button,
-        color: Colors.white,
-        fontSize: 14,
-    },
-    filterBtn: {
-        width: 40,
-        height: 40,
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: Colors.border,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: Colors.white,
-    },
-    filterIcon: {
-        fontSize: 16,
-        color: Colors.textSecondary,
     },
 });
 
