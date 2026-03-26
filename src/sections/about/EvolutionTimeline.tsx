@@ -16,7 +16,7 @@ const TIMELINE_NODES = [
     {
         phase: "The pivot",
         title: "The integrated solution",
-        desc: "Xpertance was born as the first truly unified platform where payroll and HR live in a single database, eliminating 90% of administrative overhead.",
+        desc: "PeopleStack was born as the first truly unified platform where payroll and HR live in a single database, eliminating 90% of administrative overhead.",
         side: "left" as const,
         letter: "B",
     },

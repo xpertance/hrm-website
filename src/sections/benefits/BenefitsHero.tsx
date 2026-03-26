@@ -24,7 +24,7 @@ const BenefitsHero: React.FC = () => {
                         </Text>
 
                         <Text style={styles.subtitle}>
-                            Stop losing hours to manual data entry. Xpertance automates your
+                            Stop losing hours to manual data entry. PeopleStack automates your
                             back-office ecosystem so you can focus on building
                             high-performance teams.
                         </Text>

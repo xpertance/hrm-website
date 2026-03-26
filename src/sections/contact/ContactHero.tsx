@@ -1,179 +1,127 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Pressable, StyleSheet } from "react-native";
+import { View, Text, TextInput, Pressable, StyleSheet, ScrollView } from "react-native";
 import Container from "../../layout/Container";
 import Section from "../../layout/Section";
 import { Colors } from "../../theme/colors";
 import { Typography } from "../../theme/typography";
 import { Spacing } from "../../theme/spacing";
 
-const EMPLOYEE_RANGES = [
-    "1-10",
-    "11-50",
-    "51-200",
-    "201-500",
-    "500+",
+const SERVICES = [
+    "Core HR",
+    "Time & Attendance",
+    "Leave / Time-off",
+    "Performance & Compensation",
+    "LMS",
+    "HR Help Desk",
 ];
 
 const ContactHero: React.FC = () => {
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [company, setCompany] = useState("");
-    const [employeeCount, setEmployeeCount] = useState("");
-    const [message, setMessage] = useState("");
-    const [showDropdown, setShowDropdown] = useState(false);
+    const [contact, setContact] = useState("");
+    const [organization, setOrganization] = useState("");
+    const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+    const toggleService = (service: string) => {
+        if (selectedServices.includes(service)) {
+            setSelectedServices(selectedServices.filter(s => s !== service));
+        } else {
+            setSelectedServices([...selectedServices, service]);
+        }
+    };
 
     return (
-        <Section background={Colors.background} paddingVertical={60}>
+        <Section background={Colors.background} paddingVertical={80} id="contact">
             <Container>
                 <View style={styles.row}>
                     {/* Left side */}
                     <View style={styles.left}>
-                        <Text style={styles.badge}>Contact Us</Text>
-
+                        <Text style={styles.badge}>GET IN TOUCH</Text>
                         <Text style={styles.heading}>
-                            Expert support{"\n"}for your{"\n"}growing team
+                            Ready to modernize your workforce?
                         </Text>
-
                         <Text style={styles.subtitle}>
-                            Let's streamline your HR. Reach out to our team of specialists or
-                            schedule a personalized walkthrough of our platform.
+                            Reach out to our team of specialists for a personalized walkthrough or to discuss your specific HR needs.
                         </Text>
 
-                        {/* Contact cards */}
-                        <View style={styles.contactCards}>
-                            <View style={styles.contactCard}>
-                                <View>
-                                    <Text style={styles.contactLabel}>Email us</Text>
-                                    <Text style={styles.contactValue}>xpertance932389@gmail.com</Text>
-                                </View>
+                        {/* Contact info */}
+                        <View style={styles.contactList}>
+                            <View style={styles.contactItem}>
+                                <Text style={styles.contactLabel}>Email us</Text>
+                                <Text style={styles.contactValue}>xpertance932389@gmail.com</Text>
                             </View>
-                            <View style={styles.contactCard}>
-                                <View>
-                                    <Text style={styles.contactLabel}>Call us</Text>
-                                    <Text style={styles.contactValue}>7620301874</Text>
-                                </View>
-                            </View>
-                        </View>
-
-                        {/* Trusted strip */}
-                        <View style={styles.trustedStrip}>
-                            <Text style={styles.trustedLabel}>
-                                Trusted by 5,000+ HR professionals
-                            </Text>
-                            <View style={styles.logoPlaceholders}>
-                                <View style={styles.lgPlaceholder}>
-                                    <Text style={styles.lgText}>Logo type</Text>
-                                </View>
-                                <View style={styles.lgPlaceholder}>
-                                    <Text style={styles.lgText}>Enterprise</Text>
-                                </View>
-                                <View style={styles.lgPlaceholder}>
-                                    <Text style={styles.lgText}>Global co</Text>
-                                </View>
+                            <View style={styles.contactItem}>
+                                <Text style={styles.contactLabel}>Call us</Text>
+                                <Text style={styles.contactValue}>7620301874</Text>
                             </View>
                         </View>
                     </View>
 
                     {/* Right - Form */}
                     <View style={styles.formCard}>
-                        <Text style={styles.formTitle}>Send us a message</Text>
-
-                        <View style={styles.formRow}>
-                            <View style={styles.fieldHalf}>
-                                <Text style={styles.fieldLabel}>Name</Text>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Jane Doe"
-                                    placeholderTextColor={Colors.textMuted}
-                                    value={name}
-                                    onChangeText={setName}
-                                />
-                            </View>
-                            <View style={styles.fieldHalf}>
-                                <Text style={styles.fieldLabel}>Email address</Text>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="jane@company.com"
-                                    placeholderTextColor={Colors.textMuted}
-                                    value={email}
-                                    onChangeText={setEmail}
-                                />
-                            </View>
-                        </View>
-
-                        <View style={styles.formRow}>
-                            <View style={styles.fieldHalf}>
-                                <Text style={styles.fieldLabel}>Company</Text>
-                                <TextInput
-                                    style={styles.input}
-                                    placeholder="Acme Inc."
-                                    placeholderTextColor={Colors.textMuted}
-                                    value={company}
-                                    onChangeText={setCompany}
-                                />
-                            </View>
-                            <View style={styles.fieldHalf}>
-                                <Text style={styles.fieldLabel}>Employee count</Text>
-                                <Pressable
-                                    style={styles.selectWrap}
-                                    onPress={() => setShowDropdown(!showDropdown)}
-                                >
-                                    <Text
-                                        style={[
-                                            styles.selectText,
-                                            !employeeCount && { color: Colors.textMuted },
-                                        ]}
-                                    >
-                                        {employeeCount || "Select range"}
-                                    </Text>
-                                    <Text style={styles.selectArrow}>▾</Text>
-                                </Pressable>
-                                {showDropdown && (
-                                    <View style={styles.dropdown}>
-                                        {EMPLOYEE_RANGES.map((range) => (
-                                            <Pressable
-                                                key={range}
-                                                style={styles.dropdownItem}
-                                                onPress={() => {
-                                                    setEmployeeCount(range);
-                                                    setShowDropdown(false);
-                                                }}
-                                            >
-                                                <Text style={styles.dropdownText}>{range}</Text>
-                                            </Pressable>
-                                        ))}
-                                    </View>
-                                )}
-                            </View>
-                        </View>
+                        <Text style={styles.formTitle}>Send an Inquiry</Text>
 
                         <View style={styles.fieldFull}>
-                            <Text style={styles.fieldLabel}>Message</Text>
+                            <Text style={styles.fieldLabel}>Name</Text>
                             <TextInput
-                                style={[styles.input, styles.textArea]}
-                                placeholder="How can we help you?"
+                                style={styles.input}
+                                placeholder="FullName"
                                 placeholderTextColor={Colors.textMuted}
-                                multiline
-                                numberOfLines={5}
-                                value={message}
-                                onChangeText={setMessage}
+                                value={name}
+                                onChangeText={setName}
                             />
                         </View>
 
-                        <Pressable
-                            style={({ hovered }: any) => [
-                                styles.submitBtn,
-                                hovered && styles.submitBtnHover,
-                            ]}
-                        >
-                            <Text style={styles.submitText}>Send message</Text>
-                        </Pressable>
+                        <View style={styles.fieldFull}>
+                            <Text style={styles.fieldLabel}>Organization</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Company Name"
+                                placeholderTextColor={Colors.textMuted}
+                                value={organization}
+                                onChangeText={setOrganization}
+                            />
+                        </View>
 
-                        <Text style={styles.disclaimer}>
-                            By submitting this form, you agree to our{" "}
-                            <Text style={styles.link}>Privacy Policy</Text> and{" "}
-                            <Text style={styles.link}>Terms of Service</Text>.
-                        </Text>
+                        <View style={styles.fieldFull}>
+                            <Text style={styles.fieldLabel}>Contact</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="Email or Phone"
+                                placeholderTextColor={Colors.textMuted}
+                                value={contact}
+                                onChangeText={setContact}
+                            />
+                        </View>
+
+                        <View style={styles.fieldFull}>
+                            <Text style={styles.fieldLabel}>Services (Select all that apply)</Text>
+                            <View style={styles.checkboxGrid}>
+                                {SERVICES.map(service => (
+                                    <Pressable
+                                        key={service}
+                                        onPress={() => toggleService(service)}
+                                        style={[
+                                            styles.checkboxItem,
+                                            selectedServices.includes(service) && styles.checkboxActive
+                                        ]}
+                                    >
+                                        <Text style={[
+                                            styles.checkboxText,
+                                            selectedServices.includes(service) && styles.checkboxTextActive
+                                        ]}>
+                                            {service}
+                                        </Text>
+                                    </Pressable>
+                                ))}
+                            </View>
+                        </View>
+
+                        <Pressable style={({ hovered }: any) => [
+                            styles.submitBtn,
+                            hovered && styles.submitBtnHover,
+                        ]}>
+                            <Text style={styles.submitText}>Send Message</Text>
+                        </Pressable>
                     </View>
                 </View>
             </Container>
@@ -184,216 +132,135 @@ const ContactHero: React.FC = () => {
 const styles = StyleSheet.create({
     row: {
         flexDirection: "row",
-        gap: 60,
+        gap: 64,
         alignItems: "flex-start",
     },
     left: {
         flex: 1,
-        maxWidth: 460,
+        maxWidth: 440,
     },
     badge: {
-        fontSize: 13,
-        fontWeight: "600",
+        fontSize: 12,
+        fontWeight: "700",
         color: Colors.primary,
-        letterSpacing: 1,
-        marginBottom: Spacing.lg,
+        letterSpacing: 2,
+        marginBottom: 20,
     },
     heading: {
         ...Typography.h1,
         color: Colors.primaryDark,
-        fontSize: 42,
-        lineHeight: 52,
-        marginBottom: Spacing.lg,
+        fontSize: 44,
+        lineHeight: 56,
+        marginBottom: 24,
     },
     subtitle: {
         ...Typography.body,
         color: Colors.textSecondary,
-        lineHeight: 26,
-        marginBottom: Spacing["2xl"],
-        maxWidth: 400,
+        lineHeight: 28,
+        fontSize: 18,
+        marginBottom: 40,
     },
-    contactCards: {
-        flexDirection: "row",
-        gap: 16,
-        marginBottom: Spacing["2xl"],
+    contactList: {
+        gap: 24,
     },
-    contactCard: {
-        flex: 1,
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 12,
-        backgroundColor: Colors.section,
-        borderRadius: 12,
-        padding: 20,
-        borderWidth: 1,
-        borderColor: Colors.border,
-    },
-    contactIcon: {
-        fontSize: 20,
-        color: Colors.primary,
+    contactItem: {
+        paddingVertical: 4,
     },
     contactLabel: {
-        ...Typography.body,
-        fontWeight: "600",
+        fontSize: 13,
+        fontWeight: "700",
         color: Colors.primaryDark,
-        fontSize: 14,
-        marginBottom: 2,
+        marginBottom: 4,
+        textTransform: "uppercase",
+        letterSpacing: 0.5,
     },
     contactValue: {
-        ...Typography.caption,
-        color: Colors.textSecondary,
-        fontSize: 13,
-    },
-    trustedStrip: {
-        marginTop: 8,
-    },
-    trustedLabel: {
-        fontSize: 11,
-        fontWeight: "600",
+        fontSize: 18,
         color: Colors.primary,
-        letterSpacing: 1,
-        marginBottom: 12,
-    },
-    logoPlaceholders: {
-        flexDirection: "row",
-        gap: 12,
-    },
-    lgPlaceholder: {
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-        backgroundColor: Colors.section,
-        borderRadius: 8,
-        borderWidth: 1,
-        borderColor: Colors.border,
-    },
-    lgText: {
-        fontSize: 11,
         fontWeight: "600",
-        color: Colors.textMuted,
-        letterSpacing: 0.5,
     },
     formCard: {
         flex: 1,
-        maxWidth: 520,
+        maxWidth: 560,
         backgroundColor: Colors.white,
-        borderRadius: 16,
-        padding: 36,
+        borderRadius: 20,
+        padding: 40,
         borderWidth: 1,
         borderColor: Colors.border,
         shadowColor: "#000",
-        shadowOffset: { width: 0, height: 8 },
-        shadowOpacity: 0.04,
-        shadowRadius: 24,
+        shadowOpacity: 0.05,
+        shadowRadius: 30,
     },
     formTitle: {
         ...Typography.h3,
         color: Colors.primaryDark,
-        fontSize: 22,
-        marginBottom: Spacing.xl,
-    },
-    formRow: {
-        flexDirection: "row",
-        gap: 16,
-        marginBottom: 20,
-    },
-    fieldHalf: {
-        flex: 1,
+        fontSize: 26,
+        fontWeight: "700",
+        marginBottom: 32,
     },
     fieldFull: {
-        marginBottom: 20,
+        marginBottom: 24,
     },
     fieldLabel: {
-        ...Typography.caption,
-        color: Colors.textSecondary,
-        fontWeight: "500",
-        fontSize: 13,
-        marginBottom: 6,
+        fontSize: 14,
+        fontWeight: "600",
+        color: Colors.primaryDark,
+        marginBottom: 10,
     },
     input: {
         borderWidth: 1,
         borderColor: Colors.border,
-        borderRadius: 8,
-        paddingVertical: 12,
-        paddingHorizontal: 14,
-        fontSize: 14,
-        color: Colors.primaryDark,
-        backgroundColor: Colors.white,
-        fontFamily: "Inter, sans-serif",
-        outlineStyle: "none" as any,
-    },
-    textArea: {
-        minHeight: 100,
-        textAlignVertical: "top" as any,
-    },
-    selectWrap: {
-        borderWidth: 1,
-        borderColor: Colors.border,
-        borderRadius: 8,
-        paddingVertical: 12,
-        paddingHorizontal: 14,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: Colors.white,
-    },
-    selectText: {
-        fontSize: 14,
-        color: Colors.primaryDark,
-    },
-    selectArrow: {
-        fontSize: 14,
-        color: Colors.textMuted,
-    },
-    dropdown: {
-        position: "absolute" as any,
-        top: "100%",
-        left: 0,
-        right: 0,
-        backgroundColor: Colors.white,
-        borderWidth: 1,
-        borderColor: Colors.border,
-        borderRadius: 8,
-        marginTop: 4,
-        zIndex: 10,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.08,
-        shadowRadius: 12,
-    },
-    dropdownItem: {
-        paddingVertical: 10,
-        paddingHorizontal: 14,
-    },
-    dropdownText: {
-        fontSize: 14,
-        color: Colors.primaryDark,
-    },
-    submitBtn: {
-        backgroundColor: Colors.primaryDark,
         borderRadius: 10,
         paddingVertical: 14,
+        paddingHorizontal: 16,
+        fontSize: 15,
+        color: Colors.primaryDark,
+        backgroundColor: Colors.section,
+        // @ts-ignore
+        outlineStyle: "none",
+    },
+    checkboxGrid: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        gap: 10,
+    },
+    checkboxItem: {
+        paddingVertical: 8,
+        paddingHorizontal: 14,
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: Colors.border,
+        backgroundColor: Colors.white,
+    },
+    checkboxActive: {
+        borderColor: Colors.primary,
+        backgroundColor: Colors.softPrimary,
+    },
+    checkboxText: {
+        fontSize: 13,
+        color: Colors.textMuted,
+    },
+    checkboxTextActive: {
+        color: Colors.primary,
+        fontWeight: "600",
+    },
+    submitBtn: {
+        backgroundColor: Colors.primary,
+        borderRadius: 12,
+        paddingVertical: 16,
         alignItems: "center",
-        marginBottom: 16,
-        transition: "all 0.15s ease" as any,
+        marginTop: 16,
+        // @ts-ignore
+        transition: "all 0.2s ease",
     },
     submitBtnHover: {
-        backgroundColor: "#1e293b",
+        backgroundColor: Colors.primaryDark,
+        transform: [{ translateY: -2 }],
     },
     submitText: {
-        ...Typography.button,
         color: Colors.white,
-        fontSize: 15,
-    },
-    disclaimer: {
-        ...Typography.caption,
-        color: Colors.textMuted,
-        textAlign: "center",
-        fontSize: 12,
-        lineHeight: 18,
-    },
-    link: {
-        color: Colors.primary,
-        textDecorationLine: "underline",
+        fontSize: 16,
+        fontWeight: "700",
     },
 });
 

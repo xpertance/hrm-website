@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import Section from "../../layout/Section";
 import Container from "../../layout/Container";
 import Button from "../../components/Button";
@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
                 {/* Badge */}
                 <View style={styles.badgeRow}>
                     <View style={styles.badge}>
-                        <Text style={styles.badgeText}>New: Automated tax filing 2.0</Text>
+                        <Text style={styles.badgeText}>New: Automated tax filing features</Text>
                     </View>
                 </View>
 
@@ -29,11 +29,11 @@ const HeroSection: React.FC = () => {
                     {/* Left text */}
                     <View style={styles.heroLeft}>
                         <Text style={styles.heroHeadline}>
-                            Xpertance{"\n"}
-                            <Text style={styles.heroHighlight}>Modern HR & workforce{"\n"}management platform</Text>
+                            PeopleStack{"\n"}
+                            <Text style={styles.heroHighlight}>Modern workforce & HR{"\n"}management platform</Text>
                         </Text>
                         <Text style={styles.heroSubtext}>
-                            Manage employees, payroll automation, attendance, and compliance in one centralized platform designed for modern teams. Eliminate errors and save hours of manual work every month.
+                            Xpertance offers PeopleStack, a comprehensive platform designed to simplify employee operations, payroll processes, and organizational visibility. Manage your team with confidence and precision.
                         </Text>
                         <View style={styles.heroBtns}>
                             <Button label="Get started" variant="primary" size="md" onPress={() => scrollToSection("features")} />
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         gap: 60,
+        paddingBottom: 40,
     },
     heroLeft: {
         flex: 1,
@@ -120,6 +121,7 @@ const styles = StyleSheet.create({
         color: Colors.textMuted,
         marginBottom: 32,
         lineHeight: 28,
+        fontSize: 18,
     },
     heroBtns: {
         flexDirection: "row",

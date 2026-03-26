@@ -120,12 +120,12 @@ export const EmployeeManagement: React.FC = () => (
 
 const MODULE_02_FEATURES: FeatureIconPair[] = [
     {
-        icon: "📄",
+        icon: "",
         title: "1-Click Payslips",
         desc: "Bulk generate and email secure payslips to your entire workforce.",
     },
     {
-        icon: "⚙️",
+        icon: "",
         title: "Auto-Deductions",
         desc: "Automated calculations for tax, insurance, and retirement funds.",
     },
@@ -349,12 +349,12 @@ export const FinanceLedgers: React.FC = () => (
 
 const MODULE_06_FEATURES: FeatureIconPair[] = [
     {
-        icon: "🎯",
+        icon: "",
         title: "Goal Setting & OKRs",
         desc: "Align individual contributions with company-wide strategic objectives.",
     },
     {
-        icon: "🔄",
+        icon: "",
         title: "360-Degree Reviews",
         desc: "Collect balanced feedback from peers, managers, and subordinates.",
     },

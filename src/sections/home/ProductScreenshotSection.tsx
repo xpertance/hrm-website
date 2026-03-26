@@ -7,23 +7,19 @@ import { Typography } from "../../theme/typography";
 
 const ProductScreenshotSection: React.FC = () => {
     return (
-        <Section background={Colors.background} paddingVertical={80}>
+        <Section background={Colors.background} paddingVertical={80} id="preview">
             <Container>
                 <Text style={styles.heading}>Platform Preview</Text>
-                <Text style={styles.subtext}>
-                    Take a glimpse into the Xpertance platform and its intuitive interfaces.
-                </Text>
-
-                <View style={styles.screenshotGrid}>
-                    {[1, 2, 3].map((item) => (
-                        <View key={item} style={styles.screenshotContainer}>
-                            <View style={styles.placeholderBox}>
-                                <Text style={styles.placeholderText}>
-                                    Product Screenshot Coming Soon
-                                </Text>
-                            </View>
-                        </View>
-                    ))}
+                <View style={styles.grid}>
+                    <View style={styles.screenshotPlaceholder}>
+                        <Text style={styles.placeholderText}>Product Screenshot Coming Soon</Text>
+                    </View>
+                    <View style={styles.screenshotPlaceholder}>
+                        <Text style={styles.placeholderText}>Product Screenshot Coming Soon</Text>
+                    </View>
+                    <View style={styles.screenshotPlaceholder}>
+                        <Text style={styles.placeholderText}>Product Screenshot Coming Soon</Text>
+                    </View>
                 </View>
             </Container>
         </Section>
@@ -34,47 +30,34 @@ const styles = StyleSheet.create({
     heading: {
         ...Typography.h2,
         color: Colors.primaryDark,
-        marginBottom: 12,
+        fontSize: 32,
+        marginBottom: 40,
         textAlign: "center",
     },
-    subtext: {
-        ...Typography.body,
-        color: Colors.textMuted,
-        marginBottom: 48,
-        lineHeight: 26,
-        textAlign: "center",
-        maxWidth: 600,
-        marginHorizontal: "auto",
-    },
-    screenshotGrid: {
+    grid: {
         flexDirection: "row",
         flexWrap: "wrap",
-        justifyContent: "center",
         gap: 24,
+        justifyContent: "center",
     },
-    screenshotContainer: {
+    screenshotPlaceholder: {
         flex: 1,
-        minWidth: 320,
-        maxWidth: 400,
-        height: 240,
-        borderRadius: 12,
-        overflow: "hidden",
+        minWidth: 300,
+        height: 200,
         backgroundColor: Colors.section,
-        borderWidth: 1,
-        borderColor: Colors.muted,
-    },
-    placeholderBox: {
-        flex: 1,
+        borderRadius: 16,
+        borderWidth: 2,
+        borderColor: Colors.border,
+        borderStyle: "dashed",
         alignItems: "center",
         justifyContent: "center",
-        padding: 24,
+        padding: 20,
     },
     placeholderText: {
         ...Typography.body,
         color: Colors.textMuted,
         textAlign: "center",
-        fontWeight: "600",
-        opacity: 0.6,
+        fontStyle: "italic",
     },
 });
 

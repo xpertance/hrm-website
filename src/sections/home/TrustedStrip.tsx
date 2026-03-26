@@ -4,11 +4,9 @@ import Section from "../../layout/Section";
 import Container from "../../layout/Container";
 import { Colors } from "../../theme/colors";
 import { Typography } from "../../theme/typography";
-import { Spacing } from "../../theme/spacing";
 
-const TRUSTED = [
-    "COMPANY", "ENTERPRISE", "STARTUP", "TECHCORP", "FINSERV",
-    "GLOBALHR", "PAYTECH",
+const INDUSTRIES = [
+    "Tech Startups", "Consulting", "Manufacturing", "Services",
 ];
 
 const TrustedStrip: React.FC = () => {
@@ -16,12 +14,12 @@ const TrustedStrip: React.FC = () => {
         <Section background={Colors.background} paddingVertical={40}>
             <Container>
                 <Text style={styles.label}>
-                    DESIGNED FOR MODERN BUSINESSES
+                    Industries We Serve
                 </Text>
                 <View style={styles.strip}>
-                    {TRUSTED.map((name, i) => (
-                        <View key={i} style={styles.companyPlaceholder}>
-                            <View style={styles.placeholderBar} />
+                    {INDUSTRIES.map((name, i) => (
+                        <View key={i} style={styles.industryBox}>
+                            <Text style={styles.industryText}>{name}</Text>
                         </View>
                     ))}
                 </View>
@@ -35,25 +33,31 @@ const styles = StyleSheet.create({
         ...Typography.caption,
         color: Colors.textMuted,
         textAlign: "center",
-        marginBottom: 24,
-        fontSize: 12,
-        letterSpacing: 2,
+        marginBottom: 32,
+        fontSize: 14,
+        letterSpacing: 1.5,
+        fontWeight: "600",
     },
     strip: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        gap: 40,
+        gap: 32,
         flexWrap: "wrap",
     },
-    companyPlaceholder: {
-        alignItems: "center",
+    industryBox: {
+        paddingVertical: 8,
+        paddingHorizontal: 20,
+        backgroundColor: Colors.section,
+        borderRadius: 30,
+        borderWidth: 1,
+        borderColor: Colors.border,
     },
-    placeholderBar: {
-        width: 80,
-        height: 12,
-        borderRadius: 4,
-        backgroundColor: Colors.muted,
+    industryText: {
+        ...Typography.body,
+        fontSize: 14,
+        color: Colors.primaryDark,
+        fontWeight: "500",
     },
 });
 

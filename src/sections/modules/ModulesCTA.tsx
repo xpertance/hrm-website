@@ -19,13 +19,13 @@ const ModulesCTA: React.FC = () => {
                     </Text>
                     <View style={styles.buttons}>
                         <Button
-                            label="🎧 Contact Support"
+                            label="Contact Support"
                             onPress={() => { }}
                             variant="primary"
                             size="lg"
                         />
                         <Button
-                            label="📄 View Documentation"
+                            label="View Documentation"
                             onPress={() => { }}
                             variant="outline"
                             size="lg"

@@ -6,10 +6,10 @@ import { Colors } from "../../theme/colors";
 import { Typography } from "../../theme/typography";
 
 const HIGHLIGHTS = [
-    "Simplify complex employee operations",
-    "Automate end-to-end payroll processing",
-    "Enhance overall workforce visibility",
-    "Streamline compliance and reporting",
+    "Centralized employee data",
+    "Automated payroll processing",
+    "Workforce insights",
+    "Simplified HR workflows",
 ];
 
 const ProductIntroSection: React.FC = () => {
@@ -17,9 +17,9 @@ const ProductIntroSection: React.FC = () => {
         <Section background={Colors.background} paddingVertical={80} id="features">
             <Container>
                 <View style={styles.centerCol}>
-                    <Text style={styles.heading}>What is Xpertance?</Text>
+                    <Text style={styles.heading}>What is PeopleStack?</Text>
                     <Text style={styles.desc}>
-                        Xpertance is a modern HR management platform designed to simplify employee operations, payroll processes, and workforce visibility. We provide an intuitive system that unifies all your HR needs into one seamless experience.
+                        PeopleStack is a modern workforce and HR management platform designed to simplify employee operations, payroll processes, and organizational visibility. We provide an intuitive system that unifies all your HR needs into one seamless experience.
                     </Text>
 
                     <View style={styles.bulletsGrid}>
@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         borderRadius: 8,
         gap: 12,
-        minWidth: 300,
+        minWidth: 260,
+        borderWidth: 1,
+        borderColor: Colors.border,
     },
     iconCircle: {
         width: 24,
