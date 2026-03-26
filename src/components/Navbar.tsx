@@ -9,6 +9,7 @@ const NAV_LINKS = [
     { label: "Features", path: "/features" },
     { label: "Modules", path: "/modules" },
     { label: "Benefits", path: "/benefits" },
+    { label: "Who's it for?", path: "/audiences" },
     { label: "About us", path: "/about" },
     { label: "Contact", path: "/contact" },
 ];
@@ -24,9 +25,9 @@ const Navbar: React.FC = () => {
                 {/* Logo */}
                 <Pressable onPress={() => navigate("/")} style={styles.logoContainer}>
                     <View style={styles.logoIcon}>
-                        <Text style={styles.logoIconText}>X</Text>
+                        <Text style={styles.logoIconText}>P</Text>
                     </View>
-                    <Text style={styles.logoText}>Xpertance</Text>
+                    <Text style={styles.logoText}>PeopleStack</Text>
                 </Pressable>
 
                 {/* Nav Links */}
@@ -42,8 +43,7 @@ const Navbar: React.FC = () => {
                             <Text
                                 style={[
                                     styles.navLink,
-                                    location.pathname === link.path && styles.navLinkActive,
-                                    hoveredIndex === index && styles.navLinkHover,
+                                    (location.pathname === link.path || hoveredIndex === index) && styles.navLinkActive,
                                 ]}
                             >
                                 {link.label}
@@ -74,12 +74,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        height: 64,
+        height: 72,
     },
     logoContainer: {
         flexDirection: "row",
         alignItems: "center",
-        gap: 8,
+        gap: 10,
     },
     logoIcon: {
         width: 32,
@@ -97,7 +97,8 @@ const styles = StyleSheet.create({
     logoText: {
         ...Typography.h5,
         color: Colors.primaryDark,
-        fontSize: 18,
+        fontSize: 19,
+        fontWeight: "700",
     },
     navLinks: {
         flexDirection: "row",
@@ -109,42 +110,16 @@ const styles = StyleSheet.create({
     },
     navLink: {
         ...Typography.nav,
-        color: Colors.accent,
+        color: Colors.textMuted,
+        fontSize: 15,
+        fontWeight: "500",
+        // @ts-ignore
+        transition: "all 0.2s ease",
     },
     navLinkActive: {
-        color: Colors.primaryDark,
-        fontWeight: "600",
-    },
-    navLinkHover: {
         color: Colors.primary,
-    },
-    rightActions: {
-        flexDirection: "row",
-        alignItems: "center",
-        gap: 16,
-    },
-    loginBtn: {
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-    },
-    loginText: {
-        ...Typography.nav,
-        color: Colors.accent,
-    },
-    ctaBtn: {
-        backgroundColor: Colors.primary,
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 8,
-    },
-    ctaBtnHover: {
-        backgroundColor: "#0a5f58",
-    },
-    ctaText: {
-        ...Typography.button,
-        color: Colors.white,
-        fontSize: 14,
     },
 });
 
 export default Navbar;
+

@@ -9,6 +9,7 @@ import Modules from "./pages/Modules";
 import Benefits from "./pages/Benefits";
 import Contact from "./pages/Contact";
 import Features from "./pages/Features";
+import Audiences from "./pages/Audiences";
 import { Colors } from "./theme/colors";
 
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
                     <Route path="/about" element={<About />} />
                     <Route path="/modules" element={<Modules />} />
                     <Route path="/benefits" element={<Benefits />} />
+                    <Route path="/audiences" element={<Audiences />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/features" element={<Features />} />
                 </Routes>

@@ -7,15 +7,15 @@ import { Typography } from "../../theme/typography";
 
 const UVP_ITEMS = [
     {
-        title: "Unified HR + payroll",
-        desc: "Seamlessly combine human resources, automated payroll, and workforce management.",
+        title: "Unified HR + Payroll + Workforce",
+        desc: "Seamlessly combine human resources, automated payroll, and workforce management in one software.",
     },
     {
         title: "Centralized data platform",
         desc: "Keep all employee data safely stored in a single platform, easily accessible but highly secure.",
     },
     {
-        title: "Smart reporting & insights",
+        title: "Smart insights",
         desc: "Make informed decisions with real-time workforce trends, cost analysis, and actionable metrics.",
     },
     {
@@ -30,13 +30,9 @@ const UVP_ITEMS = [
 
 const UniqueValueSection: React.FC = () => {
     return (
-        <Section background={Colors.background} paddingVertical={80}>
+        <Section background={Colors.background} paddingVertical={80} id="unique-value">
             <Container>
-                <Text style={styles.heading}>What makes Xpertance different</Text>
-                <Text style={styles.subtext}>
-                    Discover the unique value we bring to modern businesses compared to traditional solutions.
-                </Text>
-
+                <Text style={styles.heading}>What Makes PeopleStack Different</Text>
                 <View style={styles.grid}>
                     {UVP_ITEMS.map((item, index) => (
                         <FeatureCard key={index} {...item} />
@@ -59,6 +55,7 @@ const FeatureCard: React.FC<{ title: string; desc: string }> = ({
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHovered]}
         >
+            <View style={styles.accentBar} />
             <Text style={styles.cardTitle}>{title}</Text>
             <Text style={styles.cardDesc}>{desc}</Text>
         </Pressable>
@@ -69,17 +66,9 @@ const styles = StyleSheet.create({
     heading: {
         ...Typography.h2,
         color: Colors.primaryDark,
-        marginBottom: 12,
+        fontSize: 32,
+        marginBottom: 50,
         textAlign: "center",
-    },
-    subtext: {
-        ...Typography.body,
-        color: Colors.textMuted,
-        marginBottom: 48,
-        lineHeight: 26,
-        textAlign: "center",
-        maxWidth: 600,
-        marginHorizontal: "auto",
     },
     grid: {
         flexDirection: "row",
@@ -90,42 +79,42 @@ const styles = StyleSheet.create({
     card: {
         width: "calc(33.333% - 16px)" as any,
         minWidth: 280,
-        backgroundColor: Colors.background,
+        backgroundColor: Colors.white,
         borderWidth: 1,
-        borderColor: Colors.muted,
-        borderRadius: 12,
-        padding: 28,
-        gap: 12,
+        borderColor: Colors.border,
+        borderRadius: 16,
+        padding: 30,
         // @ts-ignore
-        transitionProperty: "box-shadow, border-color",
-        transitionDuration: "0.25s",
+        transition: "all 0.3s ease",
+        shadowColor: "#000",
+        shadowOpacity: 0.02,
+        shadowRadius: 10,
     },
     cardHovered: {
         borderColor: Colors.primary,
-        // @ts-ignore
-        boxShadow: "0 4px 20px rgba(15,117,109,0.08)",
+        transform: [{ scale: 1.02 }],
+        shadowOpacity: 0.1,
+        shadowRadius: 20,
     },
-    iconCircle: {
-        width: 44,
-        height: 44,
-        borderRadius: 22,
-        backgroundColor: Colors.softPrimary,
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: 4,
-    },
-    iconText: {
-        fontSize: 20,
+    accentBar: {
+        width: 40,
+        height: 4,
+        backgroundColor: Colors.primary,
+        borderRadius: 2,
+        marginBottom: 20,
     },
     cardTitle: {
         ...Typography.h5,
         color: Colors.primaryDark,
-        fontSize: 16,
+        fontSize: 20,
+        fontWeight: "600",
+        marginBottom: 12,
     },
     cardDesc: {
-        ...Typography.bodySm,
+        ...Typography.body,
         color: Colors.textMuted,
-        lineHeight: 22,
+        lineHeight: 24,
+        fontSize: 15,
     },
 });
 

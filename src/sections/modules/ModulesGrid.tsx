@@ -4,10 +4,8 @@ import Container from "../../layout/Container";
 import Section from "../../layout/Section";
 import { Colors } from "../../theme/colors";
 import { Typography } from "../../theme/typography";
-import { Spacing } from "../../theme/spacing";
 
 interface ModuleItem {
-    icon: string;
     title: string;
     description: string;
     category: string;
@@ -15,67 +13,54 @@ interface ModuleItem {
 
 const MODULES: ModuleItem[] = [
     {
-        icon: "",
-        title: "Employee directory",
-        description:
-            "Centralized database for employee records, contact information, organizational charts, and personal profiles.",
+        title: "Employee Directory",
+        description: "Centralized database for employee records, contact information, and organizational profiles.",
         category: "Core HR",
     },
     {
-        icon: "",
-        title: "Payroll system",
-        description:
-            "Automated salary processing, tax compliance management, benefits distribution, and direct deposit handling.",
+        title: "Payroll System",
+        description: "Automated salary processing, tax compliance management, and benefits distribution.",
         category: "Finance",
     },
     {
-        icon: "",
-        title: "Attendance monitoring",
-        description:
-            "Real-time tracking of clock-ins, shift rotations, break times, and automated overtime calculations.",
+        title: "Attendance Monitoring",
+        description: "Real-time tracking of clock-ins, shift rotations, and automated overtime calculations.",
         category: "Operations",
     },
     {
-        icon: "",
-        title: "Recruitment & onboarding",
-        description:
-            "Manage hiring pipelines, track applicants, and streamline the documentation process for new hires.",
+        title: "Recruitment & Onboarding",
+        description: "Manage hiring pipelines, track applicants, and streamline documentation for new hires.",
         category: "Talent",
     },
     {
-        icon: "",
-        title: "Leave management",
-        description:
-            "Automated absence requests, balance tracking, and approval workflows integrated with the company calendar.",
+        title: "Leave Management",
+        description: "Automated absence requests, balance tracking, and approval workflows integrated with calendar.",
         category: "Core HR",
     },
     {
-        icon: "",
-        title: "Finance & accounting",
-        description:
-            "General ledger tracking, complex expense reporting, budgeting tools, and comprehensive financial audits.",
+        title: "Finance & Accounting",
+        description: "General ledger tracking, expense reporting, and comprehensive financial audits.",
         category: "Finance",
     },
     {
-        icon: "",
-        title: "Performance management",
-        description:
-            "Facilitate appraisals, set KPIs, manage continuous feedback loops, and track professional growth milestones.",
+        title: "Performance Management",
+        description: "Facilitate appraisals, set KPIs, and manage continuous feedback loops for growth.",
         category: "Talent",
     },
     {
-        icon: "",
-        title: "Billing system",
-        description:
-            "Comprehensive client invoicing, management of accounts receivable, and automated billing cycle tracking.",
+        title: "Billing System",
+        description: "Invoicing, management of accounts receivable, and automated billing cycle tracking.",
         category: "Finance",
     },
     {
-        icon: "",
-        title: "Security & role access",
-        description:
-            "Fine-grained user permissions, security audit logs, multi-factor authentication, and data encryption settings.",
+        title: "Security & Role Access",
+        description: "Fine-grained permissions, security audit logs, and multi-factor authentication settings.",
         category: "Admin",
+    },
+    {
+        title: "Asset Management",
+        description: "Track organizational equipment, inventory assignments, and maintenance schedules.",
+        category: "Operations",
     },
 ];
 
@@ -103,43 +88,50 @@ const ModuleCard: React.FC<{ item: ModuleItem }> = ({ item }) => {
             onHoverOut={() => setHovered(false)}
             style={[styles.card, hovered && styles.cardHover]}
         >
-            <Text style={styles.cardTitle}>{item.title}</Text>
-            <Text style={styles.cardDesc}>{item.description}</Text>
-
-            <View style={styles.cardFooter}>
-                <Pressable style={styles.learnMore}>
-                    <Text style={styles.learnMoreText}>Learn more</Text>
-                </Pressable>
-                <View
+            <View
+                style={[
+                    styles.categoryTag,
+                    {
+                        backgroundColor:
+                            CATEGORY_COLORS[item.category] || Colors.section,
+                    },
+                ]}
+            >
+                <Text
                     style={[
-                        styles.categoryTag,
+                        styles.categoryText,
                         {
-                            backgroundColor:
-                                CATEGORY_COLORS[item.category] || Colors.section,
+                            color:
+                                CATEGORY_TEXT_COLORS[item.category] || Colors.textSecondary,
                         },
                     ]}
                 >
-                    <Text
-                        style={[
-                            styles.categoryText,
-                            {
-                                color:
-                                    CATEGORY_TEXT_COLORS[item.category] || Colors.textSecondary,
-                            },
-                        ]}
-                    >
-                        {item.category}
-                    </Text>
-                </View>
+                    {item.category}
+                </Text>
             </View>
+
+            <View style={styles.cardContent}>
+                <Text style={styles.cardTitle}>{item.title}</Text>
+                <Text style={styles.cardDesc}>{item.description}</Text>
+            </View>
+
+            <Pressable style={styles.learnMore}>
+                <Text style={styles.learnMoreText}>Explore Feature →</Text>
+            </Pressable>
         </Pressable>
     );
 };
 
 const ModulesGrid: React.FC = () => {
     return (
-        <Section background={Colors.background} paddingVertical={0}>
+        <Section background={Colors.background} paddingVertical={80} id="modules">
             <Container>
+                <View style={styles.gridHeader}>
+                    <Text style={styles.heading}>PeopleStack Modules</Text>
+                    <Text style={styles.sub}>
+                        Comprehensive tools designed for modern workforce management.
+                    </Text>
+                </View>
                 <View style={styles.grid}>
                     {MODULES.map((mod) => (
                         <ModuleCard key={mod.title} item={mod} />
@@ -151,6 +143,21 @@ const ModulesGrid: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+    gridHeader: {
+        alignItems: "center",
+        marginBottom: 60,
+    },
+    heading: {
+        ...Typography.h2,
+        color: Colors.primaryDark,
+        fontSize: 32,
+        marginBottom: 16,
+    },
+    sub: {
+        ...Typography.body,
+        color: Colors.textMuted,
+        fontSize: 16,
+    },
     grid: {
         flexDirection: "row",
         flexWrap: "wrap",
@@ -163,74 +170,59 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white,
         borderWidth: 1,
         borderColor: Colors.border,
-        borderRadius: 12,
-        padding: 28,
+        borderRadius: 16,
+        padding: 32,
         justifyContent: "space-between",
-        minHeight: 240,
-        transition: "all 0.2s ease" as any,
+        minHeight: 280,
+        // @ts-ignore
+        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
     },
     cardHover: {
         borderColor: Colors.primary,
-        shadowColor: Colors.primary,
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.08,
-        shadowRadius: 16,
-        transform: [{ translateY: -2 }],
+        transform: [{ translateY: -6 }, { scale: 1.01 }],
+        shadowColor: Colors.primaryDark,
+        shadowOffset: { width: 0, height: 12 },
+        shadowOpacity: 0.1,
+        shadowRadius: 24,
     },
-    iconWrap: {
-        width: 48,
-        height: 48,
-        borderRadius: 10,
-        backgroundColor: Colors.section,
-        borderWidth: 1,
-        borderColor: Colors.border,
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: 20,
+    categoryTag: {
+        alignSelf: "flex-start",
+        paddingVertical: 4,
+        paddingHorizontal: 12,
+        borderRadius: 6,
+        marginBottom: 24,
     },
-    iconText: {
-        fontSize: 22,
+    categoryText: {
+        fontSize: 11,
+        fontWeight: "700",
+        letterSpacing: 0.5,
+        textTransform: "uppercase",
+    },
+    cardContent: {
+        flex: 1,
     },
     cardTitle: {
         ...Typography.h5,
         color: Colors.primaryDark,
-        marginBottom: 8,
-        fontSize: 17,
-        fontWeight: "600",
+        marginBottom: 12,
+        fontSize: 20,
+        fontWeight: "700",
     },
     cardDesc: {
         ...Typography.body,
         color: Colors.textSecondary,
-        fontSize: 14,
-        lineHeight: 22,
-        marginBottom: 20,
-        flex: 1,
-    },
-    cardFooter: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
+        fontSize: 15,
+        lineHeight: 24,
+        marginBottom: 24,
     },
     learnMore: {
-        paddingVertical: 4,
+        paddingVertical: 8,
     },
     learnMoreText: {
         ...Typography.button,
         color: Colors.primary,
-        fontSize: 13,
-        fontWeight: "500",
-    },
-    categoryTag: {
-        paddingVertical: 4,
-        paddingHorizontal: 12,
-        borderRadius: 6,
-        borderWidth: 1,
-        borderColor: "rgba(0,0,0,0.06)",
-    },
-    categoryText: {
-        fontSize: 11,
+        fontSize: 14,
         fontWeight: "600",
-        letterSpacing: 0.5,
     },
 });
 

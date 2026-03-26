@@ -14,10 +14,10 @@ const ContactDemoCTA: React.FC = () => {
                 <View style={styles.banner}>
                     {/* Icon */}
                     <View style={styles.iconCircle}>
-                        <Text style={styles.iconText}>📅</Text>
+                        <Text style={styles.iconText}></Text>
                     </View>
 
-                    <Text style={styles.heading}>See HRPayroll in Action</Text>
+                    <Text style={styles.heading}>See PeopleStack in Action</Text>
                     <Text style={styles.subtitle}>
                         Get a personalized walkthrough of our platform. Discover how we
                         {"\n"}can help you save up to 20 hours a week on payroll processing.

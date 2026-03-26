@@ -14,8 +14,8 @@ const BenefitsCTA: React.FC = () => {
                 <View style={styles.banner}>
                     <Text style={styles.heading}>Ready to reclaim your time?</Text>
                     <Text style={styles.subtitle}>
-                        Join over 2,500+ companies that have automated their HR operations
-                        with{"\n"}Xpertance.
+                        Join companies that have automated their HR operations
+                        with PeopleStack.
                     </Text>
                     <View style={styles.buttons}>
                         <Button

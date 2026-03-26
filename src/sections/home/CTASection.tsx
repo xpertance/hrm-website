@@ -15,30 +15,31 @@ const CTASection: React.FC = () => {
     };
 
     return (
-        <Section background={Colors.section} paddingVertical={80} id="contact">
+        <Section background={Colors.background} paddingVertical={80} id="cta">
             <Container>
                 <View style={styles.banner}>
                     <Text style={styles.heading}>Ready to transform your HR?</Text>
                     <Text style={styles.subtext}>
-                        Join 500+ companies that have automated their payroll and empowered their{"\n"}workforce with HRPayroll.
+                        Join companies that have automated their payroll and empowered their workforce with PeopleStack.
                     </Text>
                     <View style={styles.btns}>
                         <Button
-                            label="Start your free trial"
+                            label="Start Today"
                             variant="outline"
                             size="lg"
+                            onPress={() => scrollToSection("contact")}
                             style={styles.outlineBtn}
                             textStyle={styles.outlineBtnText}
                         />
                         <Button
-                            label="Contact sales"
+                            label="Contact Sales"
                             variant="secondary"
                             size="lg"
                             onPress={() => scrollToSection("contact")}
                         />
                     </View>
                     <Text style={styles.disclaimer}>
-                        No credit card required • 14-day free trial • Cancel anytime
+                        Expert support • Scalable platform • Reliable infrastructure
                     </Text>
                 </View>
             </Container>
@@ -49,40 +50,48 @@ const CTASection: React.FC = () => {
 const styles = StyleSheet.create({
     banner: {
         backgroundColor: Colors.primary,
-        borderRadius: 20,
-        paddingVertical: 60,
+        borderRadius: 24,
+        paddingVertical: 70,
         paddingHorizontal: 40,
         alignItems: "center",
+        shadowColor: Colors.primary,
+        shadowOpacity: 0.2,
+        shadowRadius: 30,
     },
     heading: {
         ...Typography.h2,
         color: Colors.white,
         textAlign: "center",
-        marginBottom: 12,
+        fontSize: 36,
+        marginBottom: 16,
     },
     subtext: {
         ...Typography.body,
-        color: "rgba(255,255,255,0.85)",
+        color: "rgba(255,255,255,0.9)",
         textAlign: "center",
-        marginBottom: 32,
-        lineHeight: 26,
+        marginBottom: 40,
+        lineHeight: 28,
+        fontSize: 18,
+        maxWidth: 600,
     },
     btns: {
         flexDirection: "row",
         gap: 16,
-        marginBottom: 20,
+        marginBottom: 24,
     },
     outlineBtn: {
         backgroundColor: Colors.white,
         borderColor: Colors.white,
     },
     outlineBtnText: {
-        color: Colors.primaryDark,
+        color: Colors.primary,
+        fontWeight: "700",
     },
     disclaimer: {
         ...Typography.bodySm,
-        color: "rgba(255,255,255,0.6)",
-        fontSize: 13,
+        color: "rgba(255,255,255,0.7)",
+        fontSize: 14,
+        letterSpacing: 0.5,
     },
 });
 

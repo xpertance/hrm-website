@@ -9,34 +9,34 @@ import { Spacing } from "../../theme/spacing";
 interface ComparisonRow {
     feature: string;
     manual: string;
-    hrpayroll: string;
+    peoplestack: string;
 }
 
 const COMPARISON_DATA: ComparisonRow[] = [
     {
         feature: "Data management",
         manual: "Spreadsheets & paper",
-        hrpayroll: "Unified cloud database",
+        peoplestack: "Unified cloud database",
     },
     {
         feature: "Calculation speed",
         manual: "2-3 business days",
-        hrpayroll: "Instant (seconds)",
+        peoplestack: "Instant (seconds)",
     },
     {
         feature: "Tax compliance",
         manual: "Manual filing risks",
-        hrpayroll: "Auto-calculated & filed",
+        peoplestack: "Auto-calculated & filed",
     },
     {
         feature: "Employee access",
         manual: "HR request required",
-        hrpayroll: "24/7 mobile self-service",
+        peoplestack: "24/7 mobile self-service",
     },
     {
         feature: "Reporting",
         manual: "Delayed & static",
-        hrpayroll: "Real-time visual analytics",
+        peoplestack: "Real-time visual analytics",
     },
 ];
 
@@ -46,7 +46,7 @@ const ComparisonTable: React.FC = () => {
             <Container>
                 <View style={styles.header}>
                     <Text style={styles.heading}>
-                        Manual HR vs. <Text style={styles.highlight}>Xpertance</Text>
+                        Manual HR vs. <Text style={styles.highlight}>PeopleStack</Text>
                     </Text>
                     <Text style={styles.subtitle}>
                         See how the switch to automation transforms your daily operations.
@@ -64,7 +64,7 @@ const ComparisonTable: React.FC = () => {
                         </View>
                         <View style={styles.colHR}>
                             <Text style={[styles.colHeaderText, { color: Colors.primary }]}>
-                                Xpertance
+                                PeopleStack
                             </Text>
                         </View>
                     </View>
@@ -87,7 +87,7 @@ const ComparisonTable: React.FC = () => {
                             <View style={styles.colHR}>
                                 <View style={styles.checkRow}>
                                     <Text style={styles.checkIcon}>✓</Text>
-                                    <Text style={styles.hrText}>{row.hrpayroll}</Text>
+                                    <Text style={styles.hrText}>{(row as any).peoplestack}</Text>
                                 </View>
                             </View>
                         </View>

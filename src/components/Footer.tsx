@@ -1,27 +1,17 @@
-import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { useNavigate } from "react-router-dom";
 import { Colors } from "../theme/colors";
 import { Typography } from "../theme/typography";
 import { Spacing } from "../theme/spacing";
 
-const FOOTER_LINKS = {
-    product: {
-        title: "Product",
-        links: ["Payroll Automation", "Attendance Management", "Employee Records", "ESS Portal", "Integrations"],
-    },
-    company: {
-        title: "Company",
-        links: ["About Us", "Careers", "Partners", "Press Kit", "Contact"],
-    },
-    legal: {
-        title: "Legal",
-        links: ["Privacy Policy", "Terms of Service", "Security", "Compliance"],
-    },
-};
+
 
 const Footer: React.FC = () => {
-    const navigate = useNavigate();
+    const scrollToSection = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
 
     return (
         <View style={styles.wrapper}>
@@ -29,34 +19,48 @@ const Footer: React.FC = () => {
                 <View style={styles.topRow}>
                     {/* Brand column */}
                     <View style={styles.brandCol}>
-                        <Pressable onPress={() => navigate("/")} style={styles.logoContainer}>
+                        <Pressable onPress={() => window.scrollTo({ top: 0, behavior: "smooth" })} style={styles.logoContainer}>
                             <View style={styles.logoIcon}>
-                                <Text style={styles.logoIconText}>X</Text>
+                                <Text style={styles.logoIconText}>P</Text>
                             </View>
-                            <Text style={styles.logoText}>Xpertance</Text>
+                            <Text style={styles.logoText}>PeopleStack</Text>
                         </Pressable>
                         <Text style={styles.brandDesc}>
-                            The all-in-one HR and payroll platform designed to help modern companies grow faster and manage better.
+                            Xpertance offers PeopleStack, a modern workforce & HR management platform designed to simplify employee operations and payroll processes.
+                        </Text>
+                        <Text style={styles.tagline}>
+                            PeopleStack – Workforce & HR Management Platform
                         </Text>
                     </View>
 
                     {/* Link columns */}
-                    {Object.values(FOOTER_LINKS).map((section) => (
-                        <View key={section.title} style={styles.linkCol}>
-                            <Text style={styles.linkTitle}>{section.title}</Text>
-                            {section.links.map((link) => (
-                                <Pressable key={link} onPress={() => { }}>
-                                    <Text style={styles.linkText}>{link}</Text>
-                                </Pressable>
-                            ))}
-                        </View>
-                    ))}
+                    <View style={styles.linkCol}>
+                        <Text style={styles.linkTitle}>Product</Text>
+                        <Pressable onPress={() => scrollToSection("modules")}><Text style={styles.linkText}>Modules</Text></Pressable>
+                        <Pressable onPress={() => scrollToSection("features")}><Text style={styles.linkText}>Features</Text></Pressable>
+                        <Pressable onPress={() => scrollToSection("why-choose")}><Text style={styles.linkText}>Benefits</Text></Pressable>
+                        <Pressable onPress={() => scrollToSection("preview")}><Text style={styles.linkText}>Preview</Text></Pressable>
+                    </View>
+
+                    <View style={styles.linkCol}>
+                        <Text style={styles.linkTitle}>Company</Text>
+                        <Pressable onPress={() => scrollToSection("features")}><Text style={styles.linkText}>About Us</Text></Pressable>
+                        <Pressable onPress={() => scrollToSection("contact")}><Text style={styles.linkText}>Contact</Text></Pressable>
+                        <Pressable onPress={() => scrollToSection("contact")}><Text style={styles.linkText}>Book a demo</Text></Pressable>
+                    </View>
+
+                    <View style={styles.linkCol}>
+                        <Text style={styles.linkTitle}>Legal</Text>
+                        <Text style={styles.linkText}>Privacy Policy</Text>
+                        <Text style={styles.linkText}>Terms of Service</Text>
+                        <Text style={styles.linkText}>Security</Text>
+                    </View>
                 </View>
 
                 {/* Bottom bar */}
                 <View style={styles.bottomBar}>
                     <Text style={styles.copyright}>
-                        © 2024 Xpertance SaaS. All rights reserved.
+                        © 2026 PeopleStack. All rights reserved.
                     </Text>
                     <View style={styles.bottomLinks}>
                         {["Privacy", "Terms", "Cookies"].map((item) => (
@@ -97,8 +101,8 @@ const styles = StyleSheet.create({
     },
     brandCol: {
         flex: 1,
-        minWidth: 220,
-        maxWidth: 280,
+        minWidth: 260,
+        maxWidth: 320,
         gap: 16,
     },
     logoContainer: {
@@ -129,22 +133,11 @@ const styles = StyleSheet.create({
         color: Colors.textMuted,
         lineHeight: 22,
     },
-    socialRow: {
-        flexDirection: "row",
-        gap: 12,
-    },
-    socialIcon: {
-        width: 32,
-        height: 32,
-        borderRadius: 16,
-        borderWidth: 1,
-        borderColor: Colors.muted,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    socialIconText: {
-        fontSize: 12,
-        color: Colors.accent,
+    tagline: {
+        ...Typography.caption,
+        color: Colors.primary,
+        fontSize: 11,
+        fontWeight: "600",
     },
     linkCol: {
         minWidth: 140,
