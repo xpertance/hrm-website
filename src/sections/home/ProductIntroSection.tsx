@@ -14,7 +14,7 @@ const HIGHLIGHTS = [
 
 const ProductIntroSection: React.FC = () => {
     return (
-        <Section background={Colors.background} paddingVertical={80} id="features">
+        <Section background={Colors.background} paddingVertical={80}>
             <Container>
                 <View style={styles.centerCol}>
                     <Text style={styles.heading}>What is PeopleStack?</Text>

@@ -7,7 +7,7 @@ import { Typography } from "../../theme/typography";
 
 const AboutHero: React.FC = () => {
     return (
-        <Section background={Colors.section} paddingVertical={80}>
+        <Section background={Colors.section} paddingVertical={80} id="about">
             <Container>
                 <View style={styles.center}>
                     <View style={styles.badge}>

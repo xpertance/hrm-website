@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
     };
 
     return (
-        <Section background={Colors.background} paddingVertical={60}>
+        <Section background={Colors.background} paddingVertical={60} id="hero">
             <Container>
                 {/* Badge */}
                 <View style={styles.badgeRow}>

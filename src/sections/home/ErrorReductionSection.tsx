@@ -12,7 +12,7 @@ const STATS = [
 
 const ErrorReductionSection: React.FC = () => {
     return (
-        <Section background={Colors.background} paddingVertical={80}>
+        <Section background={Colors.background} paddingVertical={80} id="benefits">
             <Container>
                 <View style={styles.row}>
                     {/* Left image placeholder */}

@@ -6,6 +6,7 @@ import { Typography } from "../theme/typography";
 import { Spacing } from "../theme/spacing";
 
 const NAV_LINKS = [
+    { label: "Home", path: "/" },
     { label: "Features", path: "/features" },
     { label: "Modules", path: "/modules" },
     { label: "Benefits", path: "/benefits" },
@@ -19,11 +20,20 @@ const Navbar: React.FC = () => {
     const location = useLocation();
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    const handleNav = (path: string) => {
+        if (location.pathname === path) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            navigate(path);
+            window.scrollTo(0, 0);
+        }
+    };
+
     return (
         <View style={styles.wrapper}>
             <View style={styles.container}>
                 {/* Logo */}
-                <Pressable onPress={() => navigate("/")} style={styles.logoContainer}>
+                <Pressable onPress={() => handleNav("/")} style={styles.logoContainer}>
                     <View style={styles.logoIcon}>
                         <Text style={styles.logoIconText}>P</Text>
                     </View>
@@ -35,17 +45,15 @@ const Navbar: React.FC = () => {
                     {NAV_LINKS.map((link, index) => (
                         <Pressable
                             key={link.label}
-                            onPress={() => navigate(link.path)}
+                            onPress={() => handleNav(link.path)}
                             onHoverIn={() => setHoveredIndex(index)}
                             onHoverOut={() => setHoveredIndex(null)}
                             style={styles.navLinkPressable}
                         >
-                            <Text
-                                style={[
-                                    styles.navLink,
-                                    (location.pathname === link.path || hoveredIndex === index) && styles.navLinkActive,
-                                ]}
-                            >
+                            <Text style={[
+                                styles.navLink,
+                                (location.pathname === link.path || hoveredIndex === index) && styles.navLinkActive,
+                            ]}>
                                 {link.label}
                             </Text>
                         </Pressable>

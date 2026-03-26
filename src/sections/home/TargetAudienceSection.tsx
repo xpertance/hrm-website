@@ -15,7 +15,7 @@ const AUDIENCE = [
 
 const TargetAudienceSection: React.FC = () => {
     return (
-        <Section background={Colors.section} paddingVertical={80} id="audience">
+        <Section background={Colors.section} paddingVertical={80} id="audiences">
             <Container>
                 <View style={styles.header}>
                     <Text style={styles.heading}>Who is PeopleStack for?</Text>
